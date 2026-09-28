@@ -19,26 +19,7 @@ function abrirInvitacion() {
   }
 }
 
-// GENERADOR DINÁMICO DE LLUVIA DE ESTRELLAS
-function crearEstrellas() {
-  const container = document.getElementById('estrellas-container');
-  if (!container) return;
-
-  for (let i = 0; i < 35; i++) {
-    const estrella = document.createElement('div');
-    estrella.className = 'estrella';
-    estrella.innerText = '✨';
-    estrella.style.left = Math.random() * 98 + 'vw';
-    estrella.style.animationDuration = (Math.random() * 3 + 2) + 's';
-    estrella.style.animationDelay = (Math.random() * 5) + 's';
-    estrella.style.fontSize = (Math.random() * 12 + 18) + 'px';
-    container.appendChild(estrella);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", crearEstrellas);
-
-// RELOJ CUENTA REGRESIVA (Ajustar año, mes -1, día, hora)
+// RELOJ CUENTA REGRESIVA
 const fechaEvento = new Date(2026, 10, 15, 21, 0, 0).getTime();
 
 setInterval(function() {
