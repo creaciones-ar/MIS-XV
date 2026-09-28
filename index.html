@@ -3,101 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mis 15 - Plantilla Base</title>
+  <title>MIS XV AÑOS - BIANCA</title>
 
-  <!-- Fuentes Elegantes -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Íconos FontAwesome -->
+  <!-- Fuentes Montserrat y Playfair Display para elegancia -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  <!-- FontAwesome Íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- MÚSICA DE FONDO (Reemplazar TU-USUARIO por tu usuario de GitHub) -->
+  <!-- MÚSICA DE FONDO -->
   <audio id="musica" loop preload="auto">
-    <source src="https://TU-USUARIO.github.io/INVITACION-MIS-15/musica.mp3" type="audio/mpeg">
+    <source src="musica.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- PANTALLA DE BIENVENIDA -->
+  <!-- PANTALLA DE BIENVENIDA / OVERLAY ELEGANTE -->
   <div id="overlay" class="overlay">
     <div class="sobre-box">
-      <img src="imagenprimera.jpg" alt="Portada de bienvenida" class="foto-portada-sobre">
-      <button onclick="abrirInvitacion()" class="btn-abrir">✨ Ingresar ✨</button>
+      <h3 class="overlay-sub">MIS XV AÑOS</h3>
+      <h1 class="overlay-titulo">BIANCA</h1>
+      <p class="overlay-invitacion">Tienes una invitación especial</p>
+      <button onclick="abrirInvitacion()" class="btn-abrir">
+        <i class="fa-solid fa-envelope-open" style="margin-right: 8px;"></i>INGRESAR
+      </button>
     </div>
   </div>
 
-  <!-- LLUVIA DE ESTRELLAS -->
-  <div id="estrellas-container"></div>
-
-  <!-- CONTENIDO PRINCIPAL -->
+  <!-- CONTENEDOR PRINCIPAL ESTILO TARJETA DIGITAL -->
   <div class="main-container">
 
-    <!-- PORTADA -->
-    <div class="seccion-portada">
-      <img src="imagenprimera.jpg" alt="Portada Mis 15" class="foto-portada">
-    </div>
+    <!-- CABECERA / PORTADA -->
+    <header class="header-portada">
+      <div class="banner-box">
+        <img src="imagenprimera.jpg" alt="Bianca XV" class="foto-portada">
+      </div>
+      <h3 class="subtitulo-xv">MIS XV AÑOS</h3>
+      <h1 class="titulo-nombre">BIANCA</h1>
+    </header>
 
-    <!-- FRASE PRINCIPAL -->
-    <div class="seccion frase-box">
-      <p class="frase-texto">✨ Una noche mágica me espera... y quiero que seas parte, para compartir juntos momentos inolvidables que quedarán para siempre en mi corazón ✨</p>
-    </div>
+    <!-- FRASE INSPIRACIONAL -->
+    <section class="seccion frase-box">
+      <div class="adorno-linea"></div>
+      <p class="frase-texto">
+        Hay momentos en la vida que son especiales por sí solos, pero compartirlos con las personas que más quieres los hace inolvidables.
+      </p>
+      <div class="adorno-linea"></div>
+    </section>
 
     <!-- CONTADOR REGRESIVO -->
-    <div class="seccion contador-seccion">
-      <h3 class="titulo-faltan">Faltan:</h3>
+    <section class="seccion contador-seccion">
+      <h2 class="titulo-seccion">FALTAN TAN SOLO:</h2>
       <div id="cuenta-regresiva" class="clock-container">
         <div class="time-block"><span id="dias">00</span><small>DÍAS</small></div>
         <div class="time-block"><span id="horas">00</span><small>HORAS</small></div>
-        <div class="time-block"><span id="minutos">00</span><small>MINUTOS</small></div>
-        <div class="time-block"><span id="segundos">00</span><small>SEGUNDOS</small></div>
+        <div class="time-block"><span id="minutos">00</span><small>MINS</small></div>
+        <div class="time-block"><span id="segundos">00</span><small>SEGS</small></div>
       </div>
-    </div>
+    </section>
 
-    <!-- FECHA Y UBICACIÓN -->
-    <div class="seccion info-evento">
-      <h2 class="fecha-linea">✨ 15 Noviembre 2026 - 21:00 hs ✨</h2>
-      <p class="direccion-texto">Catamarca 1540</p>
-      <a class="btn-ubicacion" href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/" target="_blank">
-        Ver ubicación
-      </a>
-    </div>
+    <!-- DATOS DE LA FIESTA Y UBICACIÓN -->
+    <section class="seccion info-evento">
+      <div class="card-info">
+        <i class="fa-solid fa-location-dot icono-seccion"></i>
+        <h2>¿DÓNDE Y CUÁNDO?</h2>
+        <p class="fecha-destacada">SÁBADO 15 DE NOVIEMBRE - 21:00 HS</p>
+        <p class="lugar-texto">Salon de Eventos Catamarca</p>
+        <p class="direccion-texto">Catamarca 1540, CABA</p>
+        <a class="btn-estilo-tarjeta" href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/" target="_blank">
+          <i class="fa-solid fa-map-location-dot" style="margin-right: 8px;"></i>LLEGAR AL EVENTO
+        </a>
+      </div>
+    </section>
 
-    <!-- GALERÍA VERTICAL (10 FOTOS) -->
-    <div class="seccion galeria">
-      <div class="galeria-vertical">
+    <!-- GALERÍA DE FOTOS -->
+    <section class="seccion galeria">
+      <h2 class="titulo-seccion">MIS RECUERDOS</h2>
+      <div class="galeria-grid">
         <img src="foto 1.jpg" alt="Foto 1">
         <img src="foto 2.jpg" alt="Foto 2">
         <img src="foto 3.jpg" alt="Foto 3">
         <img src="foto 4.jpg" alt="Foto 4">
         <img src="foto 5.jpg" alt="Foto 5">
         <img src="foto 6.jpg" alt="Foto 6">
-        <img src="foto 7.jpg" alt="Foto 7">
-        <img src="foto 8.jpg" alt="Foto 8">
-        <img src="foto 9.jpg" alt="Foto 9">
-        <img src="foto 10.jpg" alt="Foto 10">
       </div>
-    </div>
+    </section>
 
-    <!-- REGALOS / ALIAS -->
-    <div class="seccion regalos-box">
-      <h2 class="titulo-cursiva">🎁 Regalos</h2>
-      <p class="regalos-p">
-        El mejor regalo es tu presencia, pero si deseás obsequiarme algo, podés hacerlo a través de mi alias de Mercado Pago 💫
-      </p>
-      <div class="alias-card">
-        <p><strong>Alias:</strong> Nicole.aguiar.mis.15</p>
-        <p><strong>Nombre:</strong> Nicole-Aguiar-Ot</p>
-        <p><strong>CVU:</strong> 0000003100055991041744</p>
+    <!-- DRESS CODE / VESTIMENTA -->
+    <section class="seccion dresscode">
+      <div class="card-info">
+        <i class="fa-solid fa-shirt icono-seccion"></i>
+        <h2>DRESS CODE</h2>
+        <p class="estilo-texto">Elegante / Formal</p>
       </div>
-    </div>
+    </section>
 
-    <!-- CONFIRMACIÓN POR WHATSAPP -->
-    <div class="seccion rsvp-box">
-      <p class="frase-texto">✨ Nos encantaría contar con tu presencia ✨</p>
-      <a class="btn-wsp" href="https://wa.me/541156167548?text=Hola%20confirmo%20mi%20asistencia%20a%20los%2015%20de%20Nicole%20✨" target="_blank">
-        <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i>Confirmar asistencia
-      </a>
-    </div>
+    <!-- REGALOS / MERCADO PAGO -->
+    <section class="seccion regalos-box">
+      <div class="card-info">
+        <i class="fa-solid fa-gift icono-seccion"></i>
+        <h2>REGALOS</h2>
+        <p class="regalos-p">
+          Tu presencia es mi mejor regalo, pero si deseas realizarme un obsequio puedes hacerlo a través de la siguiente cuenta:
+        </p>
+        <div class="alias-card">
+          <p><strong>Alias MP:</strong> Bianca.mis.xv</p>
+          <p><strong>Titular:</strong> Bianca Aguiar</p>
+          <p><strong>CVU:</strong> 0000003100055991041744</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIRMACIÓN DE ASISTENCIA -->
+    <section class="seccion rsvp-box">
+      <div class="card-info destacar-rsvp">
+        <i class="fa-brands fa-whatsapp icono-seccion wsp-color"></i>
+        <h2>CONFIRMACIÓN DE ASISTENCIA</h2>
+        <p class="rsvp-p">Por favor confirma tu presencia antes del 1 de Noviembre.</p>
+        <a class="btn-wsp" href="https://wa.me/541156167548?text=Hola!%20Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Bianca%20✨" target="_blank">
+          <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i>CONFIRMAR POR WHATSAPP
+        </a>
+      </div>
+    </section>
 
   </div>
 
