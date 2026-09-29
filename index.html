@@ -1,4 +1,45 @@
-<!-- Cuenta Regresiva con el fondo exacto -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 Años - Nicole</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Pantalla de Entrada Original -->
+    <div id="welcome-screen">
+        <div class="welcome-content">
+            <p class="welcome-subtitle">Nicole</p>
+            <h1 class="welcome-title">MIS XV AÑOS</h1>
+            
+            <div class="guest-card">
+                <div class="guest-text">TENEMOS 1 LUGAR RESERVADO PARA VOS</div>
+            </div>
+
+            <button id="open-btn" class="btn-enter">Haz clic para ingresar</button>
+        </div>
+    </div>
+
+    <!-- Audio de fondo -->
+    <audio id="background-music" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Contenido Principal de la Invitación -->
+    <main id="main-content" class="hidden">
+        
+        <!-- Portada Principal -->
+        <header class="hero-section" style="background-image: url('imagenprimera.jpg');">
+            <div class="hero-overlay">
+                <h1>Nicole</h1>
+            </div>
+        </header>
+
+        <!-- Cuenta Regresiva -->
         <section class="countdown-section">
             <h2 class="countdown-title">
                 MIS XV<br>
@@ -6,23 +47,29 @@
             </h2>
             <div id="countdown" class="countdown-grid">
                 <div class="time-box">
-                    <span id="days">00</span>
+                    <span id="days">0</span>
                     <p>Días</p>
                 </div>
                 <div class="separator">:</div>
                 <div class="time-box">
-                    <span id="hours">00</span>
+                    <span id="hours">0</span>
                     <p>Horas</p>
                 </div>
                 <div class="separator">:</div>
                 <div class="time-box">
-                    <span id="minutes">00</span>
+                    <span id="minutes">0</span>
                     <p>Minutos</p>
                 </div>
                 <div class="separator">:</div>
                 <div class="time-box">
-                    <span id="seconds">00</span>
+                    <span id="seconds">0</span>
                     <p>Segundos</p>
                 </div>
             </div>
         </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
