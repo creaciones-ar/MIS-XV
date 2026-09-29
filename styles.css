@@ -113,25 +113,27 @@ body {
     letter-spacing: 3px;
 }
 
-/* Sección de Cuenta Regresiva con fondo de textura */
+/* Sección de Cuenta Regresiva idéntica a la referencia */
 .countdown-section {
     min-height: 100vh;
     background-image: url('fondo-contador.jpg');
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: 55% 87%;
+    background-size: cover;
+    background-attachment: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 20px;
+    padding: 20px;
+    row-gap: 8px;
 }
 
 .countdown-title {
     font-size: 2.2rem;
     letter-spacing: 3px;
     color: #1b365d;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     line-height: 1.3;
     font-weight: 400;
     text-transform: uppercase;
@@ -139,11 +141,13 @@ body {
 
 .countdown-title span {
     font-weight: 600;
+    display: block;
 }
 
+/* Grilla en una sola línea horizontal con los dos puntos integrados */
 .countdown-grid {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
     gap: 15px;
 }
@@ -152,7 +156,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 60px;
 }
 
 .time-box span {
@@ -173,5 +176,7 @@ body {
     font-size: 2.2rem;
     font-weight: 300;
     color: #1b365d;
-    margin-bottom: 20px;
+    /* Los sube para que queden alineados exactamente en medio de los números */
+    position: relative;
+    top: -12px; 
 }
