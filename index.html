@@ -1,56 +1,335 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis 15 Años - Nicole</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIS XV AÑOS - NICOLE</title>
+
+  <!-- Fuentes Montserrat y Playfair Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  <!-- FontAwesome Íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    :root {
+      --color-principal: #1b4568;
+      --color-blanco: #ffffff;
+      --color-texto-oscuro: #2E2E2E;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--color-blanco);
+      color: var(--color-texto-oscuro);
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* PANTALLA DE BIENVENIDA (TAL CUAL LA DEJASTE) */
+    .overlay {
+      position: fixed;
+      top: 0; 
+      left: 0;
+      width: 100vw; 
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+
+    .sobre-box {
+      text-align: center;
+      padding: 30px 20px;
+      width: 90%;
+      max-width: 450px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .overlay-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 4px;
+      color: #555555;
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .overlay-titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      color: var(--color-principal);
+      font-weight: 700;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .tarjeta-invitado {
+      background: #ffffff;
+      border: 1.5px solid var(--color-principal);
+      border-radius: 14px;
+      padding: 25px 15px;
+      margin-bottom: 25px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(27, 69, 104, 0.1);
+    }
+
+    .linea-superior-tarjeta {
+      position: absolute;
+      top: 0;
+      left: 25%;
+      width: 50%;
+      height: 6px;
+      background-color: var(--color-principal);
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    .nombre-invitado {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-principal);
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .texto-lugar-invitado {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      color: #444444;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .btn-abrir {
+      background: var(--color-principal);
+      color: #ffffff;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      transition: opacity 0.2s;
+    }
+
+    .btn-abrir:hover {
+      opacity: 0.9;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .main-container {
+      width: 100%;
+      max-width: 620px;
+      background-color: var(--color-blanco);
+      box-shadow: 0 0 30px rgba(0,0,0,0.08);
+    }
+
+    /* BLOQUES ALTERNADOS */
+    .bloque-blanco {
+      background-color: var(--color-blanco);
+      color: var(--color-texto-oscuro);
+      padding: 60px 30px;
+      text-align: center;
+    }
+
+    .bloque-azul {
+      background-color: var(--color-principal);
+      color: #ffffff;
+      padding: 60px 30px;
+      text-align: center;
+    }
+
+    .subtitulo-xv {
+      font-size: 0.9rem;
+      letter-spacing: 4px;
+      color: #555555;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .titulo-nombre {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: var(--color-principal);
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .banner-box {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .foto-portada {
+      width: 100%;
+      display: block;
+    }
+
+    .frase-texto-azul {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+
+    .titulo-seccion {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--color-principal);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    /* CUENTA REGRESIVA */
+    .clock-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .time-block {
+      background: var(--color-principal);
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 15px 12px;
+      flex: 1;
+    }
+
+    .time-block span {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .time-block small {
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Pantalla de Bienvenida Original -->
-    <div id="welcome-screen" class="welcome-screen">
-        <div class="welcome-box">
-            <p class="welcome-top">NICOLE</p>
-            <h1>MIS XV AÑOS</h1>
-            <div class="invitation-card">
-                <h2>ULI</h2>
-                <p>TENEMOS 1 LUGAR RESERVADO PARA VOS</p>
-            </div>
-            <button id="open-btn" class="btn-enter">HAZ CLIC PARA INGRESAR</button>
-        </div>
+  <!-- MÚSICA DE FONDO -->
+  <audio id="musica" loop preload="auto">
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- PANTALLA DE BIENVENIDA -->
+  <div id="overlay" class="overlay">
+    <div class="sobre-box">
+      <h3 class="overlay-sub">NICOLE</h3>
+      <h1 class="overlay-titulo">MIS XV AÑOS</h1>
+      
+      <div class="tarjeta-invitado">
+        <div class="linea-superior-tarjeta"></div>
+        <p class="nombre-invitado">ULI</p>
+        <p class="texto-lugar-invitado">TENEMOS 1 LUGAR RESERVADO PARA VOS</p>
+      </div>
+
+      <button onclick="abrirInvitacion()" class="btn-abrir">
+        HAZ CLIC PARA INGRESAR
+      </button>
     </div>
+  </div>
 
-    <!-- Audio de fondo -->
-    <audio id="background-music" loop>
-        <source src="musica.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-    </audio>
+  <!-- CONTENEDOR PRINCIPAL -->
+  <div class="main-container">
 
-    <!-- Contenido Principal (aparece al hacer clic) -->
-    <main id="main-content" class="hidden">
-        
-        <!-- Portada Principal -->
-        <header class="hero-section" style="background-image: url('imagenprimera.jpg');">
-            <div class="hero-overlay">
-                <h1>Nicole</h1>
-            </div>
-        </header>
+    <!-- BLOQUE 1: BLANCO (PORTADA) -->
+    <section class="bloque-blanco">
+      <h3 class="subtitulo-xv">NICOLE</h3>
+      <h1 class="titulo-nombre">MIS XV AÑOS</h1>
+      <div class="banner-box">
+        <img src="imagenprimera.jpg" alt="Nicole XV" class="foto-portada">
+      </div>
+    </section>
 
-        <!-- Sección Cuenta Regresiva con textura contador.jpg -->
-        <section class="countdown-section" style="background-image: url('contador.jpg');">
-            <h2>Faltan...</h2>
-            <div id="countdown" class="countdown-grid">
-                <div class="time-box"><span id="days">00</span><p>Días</p></div>
-                <div class="time-box"><span id="hours">00</span><p>Horas</p></div>
-                <div class="time-box"><span id="minutes">00</span><p>Minutos</p></div>
-                <div class="time-box"><span id="seconds">00</span><p>Segundos</p></div>
-            </div>
-        </section>
+    <!-- BLOQUE 2: AZUL (FRASE) -->
+    <section class="bloque-azul">
+      <p class="frase-texto-azul">HAGAMOS QUE SEA UNA NOCHE ¡ÚNICA!</p>
+    </section>
 
-    </main>
+    <!-- BLOQUE 3: BLANCO (CUENTA REGRESIVA) -->
+    <section class="bloque-blanco">
+      <h2 class="titulo-seccion">FALTAN TAN SOLO:</h2>
+      <div id="cuenta-regresiva" class="clock-container">
+        <div class="time-block"><span id="dias">00</span><small>DÍAS</small></div>
+        <div class="time-block"><span id="horas">00</span><small>HORAS</small></div>
+        <div class="time-block"><span id="minutos">00</span><small>MINS</small></div>
+        <div class="time-block"><span id="segundos">00</span><small>SEGS</small></div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    function abrirInvitacion() {
+      const overlay = document.getElementById('overlay');
+      const musica = document.getElementById('musica');
+      
+      overlay.style.opacity = '0';
+      setTimeout(() => {
+        overlay.style.display = 'none';
+      }, 1000);
+
+      musica.play().catch(error => {
+        console.log("Reproducción automática bloqueada", error);
+      });
+    }
+
+    // CUENTA REGRESIVA (Fecha objetivo: 15 de Noviembre de 2026)
+    const fechaEvento = new Date("Nov 15, 2026 21:00:00").getTime();
+
+    const timer = setInterval(function() {
+      const ahora = new Date().getTime();
+      const diferencia = fechaEvento - ahora;
+
+      if (diferencia < 0) {
+        clearInterval(timer);
+        return;
+      }
+
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+      document.getElementById("dias").innerText = dias < 10 ? "0" + dias : dias;
+      document.getElementById("horas").innerText = horas < 10 ? "0" + horas : horas;
+      document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutos;
+      document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
+    }, 1000);
+  </script>
 </body>
 </html>
