@@ -33,7 +33,7 @@
       overflow-x: hidden;
     }
 
-    /* PANTALLA DE BIENVENIDA CON TU IMAGEN DE FONDO */
+    /* PANTALLA DE BIENVENIDA (TAL CUAL LA DEJASTE) */
     .overlay {
       position: fixed;
       top: 0; 
@@ -149,8 +149,17 @@
       box-shadow: 0 0 30px rgba(0,0,0,0.08);
     }
 
+    /* BLOQUES ALTERNADOS */
     .bloque-blanco {
-      background-color: #ffffff;
+      background-color: var(--color-blanco);
+      color: var(--color-texto-oscuro);
+      padding: 60px 30px;
+      text-align: center;
+    }
+
+    .bloque-azul {
+      background-color: var(--color-principal);
+      color: #ffffff;
       padding: 60px 30px;
       text-align: center;
     }
@@ -184,6 +193,48 @@
       width: 100%;
       display: block;
     }
+
+    .frase-texto-azul {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+
+    .titulo-seccion {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--color-principal);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    /* CUENTA REGRESIVA */
+    .clock-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .time-block {
+      background: var(--color-principal);
+      color: #ffffff;
+      border-radius: 10px;
+      padding: 15px 12px;
+      flex: 1;
+    }
+
+    .time-block span {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .time-block small {
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+    }
   </style>
 </head>
 <body>
@@ -193,7 +244,7 @@
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- PANTALLA DE BIENVENIDA CON LA IMAGEN "fondo" -->
+  <!-- PANTALLA DE BIENVENIDA -->
   <div id="overlay" class="overlay">
     <div class="sobre-box">
       <h3 class="overlay-sub">NICOLE</h3>
@@ -213,6 +264,8 @@
 
   <!-- CONTENEDOR PRINCIPAL -->
   <div class="main-container">
+
+    <!-- BLOQUE 1: BLANCO (PORTADA) -->
     <section class="bloque-blanco">
       <h3 class="subtitulo-xv">NICOLE</h3>
       <h1 class="titulo-nombre">MIS XV AÑOS</h1>
@@ -220,8 +273,26 @@
         <img src="imagenprimera.jpg" alt="Nicole XV" class="foto-portada">
       </div>
     </section>
+
+    <!-- BLOQUE 2: AZUL (FRASE) -->
+    <section class="bloque-azul">
+      <p class="frase-texto-azul">HAGAMOS QUE SEA UNA NOCHE ¡ÚNICA!</p>
+    </section>
+
+    <!-- BLOQUE 3: BLANCO (CUENTA REGRESIVA) -->
+    <section class="bloque-blanco">
+      <h2 class="titulo-seccion">FALTAN TAN SOLO:</h2>
+      <div id="cuenta-regresiva" class="clock-container">
+        <div class="time-block"><span id="dias">00</span><small>DÍAS</small></div>
+        <div class="time-block"><span id="horas">00</span><small>HORAS</small></div>
+        <div class="time-block"><span id="minutos">00</span><small>MINS</small></div>
+        <div class="time-block"><span id="segundos">00</span><small>SEGS</small></div>
+      </div>
+    </section>
+
   </div>
 
+  <!-- SCRIPTS -->
   <script>
     function abrirInvitacion() {
       const overlay = document.getElementById('overlay');
@@ -236,6 +307,29 @@
         console.log("Reproducción automática bloqueada", error);
       });
     }
+
+    // CUENTA REGRESIVA (Fecha objetivo: 15 de Noviembre de 2026)
+    const fechaEvento = new Date("Nov 15, 2026 21:00:00").getTime();
+
+    const timer = setInterval(function() {
+      const ahora = new Date().getTime();
+      const diferencia = fechaEvento - ahora;
+
+      if (diferencia < 0) {
+        clearInterval(timer);
+        return;
+      }
+
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+      document.getElementById("dias").innerText = dias < 10 ? "0" + dias : dias;
+      document.getElementById("horas").innerText = horas < 10 ? "0" + horas : horas;
+      document.getElementById("minutos").innerText = minutos < 10 ? "0" + minutos : minutos;
+      document.getElementById("segundos").innerText = segundos < 10 ? "0" + segundos : segundos;
+    }, 1000);
   </script>
 </body>
 </html>
