@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis 15 Años - Nicole</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Fuente elegante para títulos -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Pantalla de Inicio / Reproductor de Música -->
+    <!-- Pantalla de Bienvenida Original -->
     <div id="welcome-screen" class="welcome-screen">
-        <div class="welcome-content">
-            <h1>Mis 15 Años</h1>
-            <h2>Nicole</h2>
-            <p>Haz clic para abrir la invitación</p>
-            <button id="open-btn" class="btn-open">Abrir Invitación</button>
+        <div class="welcome-box">
+            <p class="welcome-top">NICOLE</p>
+            <h1>MIS XV AÑOS</h1>
+            <div class="invitation-card">
+                <h2>ULI</h2>
+                <p>TENEMOS 1 LUGAR RESERVADO PARA VOS</p>
+            </div>
+            <button id="open-btn" class="btn-enter">HAZ CLIC PARA INGRESAR</button>
         </div>
     </div>
 
@@ -26,18 +28,17 @@
         Tu navegador no soporta el elemento de audio.
     </audio>
 
-    <!-- Contenido Principal de la Invitación -->
+    <!-- Contenido Principal (aparece al hacer clic) -->
     <main id="main-content" class="hidden">
         
-        <!-- Sección de Portada -->
+        <!-- Portada Principal -->
         <header class="hero-section" style="background-image: url('imagenprimera.jpg');">
             <div class="hero-overlay">
                 <h1>Nicole</h1>
-                <p class="subtitle">¡Estás invitado a celebrar mis 15 años!</p>
             </div>
         </header>
 
-        <!-- Sección Cuenta Regresiva -->
+        <!-- Sección Cuenta Regresiva con textura contador.jpg -->
         <section class="countdown-section" style="background-image: url('contador.jpg');">
             <h2>Faltan...</h2>
             <div id="countdown" class="countdown-grid">
