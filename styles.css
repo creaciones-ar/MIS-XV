@@ -116,7 +116,7 @@ body {
 /* Sección de Cuenta Regresiva con fondo de textura */
 .countdown-section {
     min-height: 100vh;
-    background-image: url('contador.jpg');
+    background-image: url('fondo-contador.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
