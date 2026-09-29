@@ -1,180 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MIS XV AÑOS - NICOLE</title>
-
-  <!-- Fuentes Montserrat y Playfair Display -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
-  <!-- FontAwesome Íconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-  <!-- ESTILOS INCORPORADOS PARA ASEGURAR QUE CARGUEN AL 100% -->
-  <style>
-    :root {
-      --color-principal: #1b4568;
-      --color-blanco: #ffffff;
-      --color-texto-oscuro: #2E2E2E;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--color-blanco);
-      color: var(--color-texto-oscuro);
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* PANTALLA DE BIENVENIDA (OVERLAY) */
-    .overlay {
-      position: fixed;
-      top: 0; 
-      left: 0;
-      width: 100vw; 
-      height: 100vh;
-      background-color: #ffffff;
-      color: #1b4568;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 1s ease;
-    }
-
-    .sobre-box {
-      text-align: center;
-      padding: 20px;
-      width: 90%;
-      max-width: 450px;
-    }
-
-    .overlay-sub {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.9rem;
-      letter-spacing: 4px;
-      color: #555555;
-      font-weight: 400;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
-
-    .overlay-titulo {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.8rem;
-      letter-spacing: 3px;
-      color: #1b4568;
-      font-weight: 400;
-      margin-bottom: 30px;
-      text-transform: uppercase;
-    }
-
-    .tarjeta-invitado {
-      background: #ffffff;
-      border: 1.5px solid #1b4568;
-      border-radius: 16px;
-      padding: 35px 20px 30px 20px;
-      margin-bottom: 25px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(27, 69, 104, 0.08);
-    }
-
-    .linea-superior-tarjeta {
-      position: absolute;
-      top: 0;
-      left: 25%;
-      width: 50%;
-      height: 6px;
-      background-color: #1b4568;
-      border-bottom-left-radius: 6px;
-      border-bottom-right-radius: 6px;
-    }
-
-    .nombre-invitado {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #1b4568;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-    }
-
-    .texto-lugar-invitado {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 1.5px;
-      color: #2E2E2E;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .btn-abrir {
-      background: transparent;
-      color: #1b4568;
-      border: none;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      cursor: pointer;
-      padding: 10px;
-      text-transform: uppercase;
-      transition: opacity 0.2s;
-    }
-
-    .btn-abrir:hover {
-      opacity: 0.6;
-    }
-
-    /* CONTENEDOR PRINCIPAL */
-    .main-container {
-      width: 100%;
-      max-width: 620px;
-      background-color: var(--color-blanco);
-      box-shadow: 0 0 30px rgba(0,0,0,0.08);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 Años - Nicole</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuente elegante para títulos -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- MÚSICA DE FONDO -->
-  <audio id="musica" loop preload="auto">
-    <source src="musica.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- PANTALLA DE BIENVENIDA -->
-  <div id="overlay" class="overlay">
-    <div class="sobre-box">
-      <h3 class="overlay-sub">NICOLE</h3>
-      <h1 class="overlay-titulo">MIS XV AÑOS</h1>
-      
-      <div class="tarjeta-invitado">
-        <div class="linea-superior-tarjeta"></div>
-        <p class="nombre-invitado">ULI</p>
-        <p class="texto-lugar-invitado">TENEMOS 1 LUGAR RESERVADO PARA VOS</p>
-      </div>
-
-      <button onclick="abrirInvitacion()" class="btn-abrir">
-        HAZ CLIC PARA INGRESAR
-      </button>
+    <!-- Pantalla de Inicio / Reproductor de Música -->
+    <div id="welcome-screen" class="welcome-screen">
+        <div class="welcome-content">
+            <h1>Mis 15 Años</h1>
+            <h2>Nicole</h2>
+            <p>Haz clic para abrir la invitación</p>
+            <button id="open-btn" class="btn-open">Abrir Invitación</button>
+        </div>
     </div>
-  </div>
 
-  <!-- CONTENEDOR PRINCIPAL DE LA INVITACIÓN -->
-  <div class="main-container">
-    <!-- Aquí irá el resto de tu contenido -->
-  </div>
+    <!-- Audio de fondo -->
+    <audio id="background-music" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
 
-  <script src="script.js"></script>
+    <!-- Contenido Principal de la Invitación -->
+    <main id="main-content" class="hidden">
+        
+        <!-- Sección de Portada -->
+        <header class="hero-section" style="background-image: url('imagenprimera.jpg');">
+            <div class="hero-overlay">
+                <h1>Nicole</h1>
+                <p class="subtitle">¡Estás invitado a celebrar mis 15 años!</p>
+            </div>
+        </header>
+
+        <!-- Sección Cuenta Regresiva -->
+        <section class="countdown-section" style="background-image: url('contador.jpg');">
+            <h2>Faltan...</h2>
+            <div id="countdown" class="countdown-grid">
+                <div class="time-box"><span id="days">00</span><p>Días</p></div>
+                <div class="time-box"><span id="hours">00</span><p>Horas</p></div>
+                <div class="time-box"><span id="minutes">00</span><p>Minutos</p></div>
+                <div class="time-box"><span id="seconds">00</span><p>Segundos</p></div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
