@@ -34,8 +34,8 @@ const countdownTimer = setInterval(() => {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-    document.getElementById("seconds").innerText = seconds;
+    document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+    document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+    document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+    document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
 }, 1000);
