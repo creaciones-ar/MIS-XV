@@ -6,19 +6,19 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #0b1d3a;
-    color: #fff;
+    background-color: #ffffff;
+    color: #1b365d;
     text-align: center;
 }
 
-/* Pantalla de bienvenida */
+/* Pantalla de bienvenida (Estilo original tuyo) */
 .welcome-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: #071325;
+    background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,33 +26,61 @@ body {
     transition: opacity 0.8s ease;
 }
 
-.welcome-content h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.5rem;
-    color: #d4af37;
-    margin-bottom: 10px;
+.welcome-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
 }
 
-.welcome-content h2 {
-    font-size: 2rem;
+.welcome-top {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: #555;
+}
+
+.welcome-box h1 {
+    font-size: 1.8rem;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    color: #1b365d;
+    font-weight: 400;
 }
 
-.btn-open {
-    background-color: #d4af37;
-    color: #071325;
+.invitation-card {
+    border: 1.5px solid #1b365d;
+    border-radius: 12px;
+    padding: 25px 40px;
+    margin: 10px 0;
+    background: #fff;
+}
+
+.invitation-card h2 {
+    font-size: 1.5rem;
+    color: #1b365d;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.invitation-card p {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+.btn-enter {
+    background: none;
     border: none;
-    padding: 12px 30px;
-    font-size: 1rem;
+    color: #1b365d;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
     font-weight: 600;
-    border-radius: 25px;
     cursor: pointer;
-    transition: 0.3s;
+    margin-top: 15px;
 }
 
-.btn-open:hover {
-    background-color: #fff;
+.btn-enter:hover {
+    opacity: 0.7;
 }
 
 .hidden {
@@ -67,32 +95,17 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding-bottom: 50px;
 }
 
-.hero-overlay {
-    background: rgba(7, 19, 37, 0.6);
-    width: 100%;
-    padding: 20px;
-}
-
-.hero-overlay h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 4rem;
-    color: #d4af37;
-}
-
-/* Cuenta regresiva */
+/* Cuenta regresiva con textura contador.jpg */
 .countdown-section {
     padding: 80px 20px;
     background-size: cover;
     background-position: center;
-    color: #2c3e50; /* Color oscuro para que resalte sobre el fondo claro */
 }
 
 .countdown-section h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 30px;
     color: #1b365d;
 }
@@ -105,11 +118,11 @@ body {
 }
 
 .time-box {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.9);
     padding: 15px 20px;
     border-radius: 10px;
     min-width: 80px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .time-box span {
@@ -120,7 +133,7 @@ body {
 }
 
 .time-box p {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     color: #555;
 }
