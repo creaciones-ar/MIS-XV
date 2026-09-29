@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MIS XV AÑOS - NICOLE</title>
 
-  <!-- Fuentes Montserrat y Playfair Display para elegancia -->
+  <!-- Fuentes Montserrat y Playfair Display -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
   <!-- FontAwesome Íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -18,22 +18,28 @@
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- PANTALLA DE BIENVENIDA / OVERLAY ELEGANTE -->
+  <!-- PANTALLA DE BIENVENIDA / OVERLAY CON NOMBRE DE INVITADO -->
   <div id="overlay" class="overlay">
     <div class="sobre-box">
-      <h3 class="overlay-sub">MIS XV AÑOS</h3>
-      <h1 class="overlay-titulo">NICOLE</h1>
-      <p class="overlay-invitacion">Tienes una invitación especial</p>
+      <h3 class="overlay-sub">NICOLE</h3>
+      <h1 class="overlay-titulo">MIS XV AÑOS</h1>
+      
+      <!-- Tarjeta central del invitado -->
+      <div class="tarjeta-invitado">
+        <p class="nombre-invitado">ULI</p>
+        <p class="texto-lugar-invitado">TENEMOS 1 LUGAR RESERVADO PARA VOS</p>
+      </div>
+
       <button onclick="abrirInvitacion()" class="btn-abrir">
-        <i class="fa-solid fa-envelope-open" style="margin-right: 8px;"></i>INGRESAR
+        HAZ CLIC PARA INGRESAR
       </button>
     </div>
   </div>
 
-  <!-- CONTENEDOR PRINCIPAL ESTILO TARJETA DIGITAL -->
+  <!-- CONTENEDOR PRINCIPAL -->
   <div class="main-container">
 
-    <!-- CABECERA / PORTADA -->
+    <!-- PORTADA -->
     <header class="header-portada">
       <div class="banner-box">
         <img src="imagenprimera.jpg" alt="Nicole XV" class="foto-portada">
@@ -46,7 +52,7 @@
     <section class="seccion frase-box">
       <div class="adorno-linea"></div>
       <p class="frase-texto">
-        Hay momentos en la vida que son especiales por sí solos, pero compartirlos con las personas que más quieres los hace inolvidables.
+        HAGAMOS QUE SEA UNA NOCHE ¡ÚNICA!
       </p>
       <div class="adorno-linea"></div>
     </section>
@@ -62,23 +68,31 @@
       </div>
     </section>
 
-    <!-- DATOS DE LA FIESTA Y UBICACIÓN -->
+    <!-- CUÁNDO Y DÓNDE -->
+    <section class="seccion info-evento">
+      <div class="card-info">
+        <i class="fa-solid fa-calendar-days icono-seccion"></i>
+        <h2>¿CUÁNDO?</h2>
+        <p class="fecha-destacada">15 DE NOVIEMBRE 2026</p>
+        <p class="lugar-texto">| 21:00 HS |</p>
+      </div>
+    </section>
+
     <section class="seccion info-evento">
       <div class="card-info">
         <i class="fa-solid fa-location-dot icono-seccion"></i>
-        <h2>¿DÓNDE Y CUÁNDO?</h2>
-        <p class="fecha-destacada">SÁBADO 15 DE NOVIEMBRE - 21:00 HS</p>
-        <p class="lugar-texto">Salon de Eventos Catamarca</p>
+        <h2>¿DÓNDE?</h2>
+        <p class="lugar-texto">Salon Principal</p>
         <p class="direccion-texto">Catamarca 1540, CABA</p>
         <a class="btn-estilo-tarjeta" href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/" target="_blank">
-          <i class="fa-solid fa-map-location-dot" style="margin-right: 8px;"></i>LLEGAR AL EVENTO
+          LLEGAR AL EVENTO
         </a>
       </div>
     </section>
 
     <!-- GALERÍA DE FOTOS -->
     <section class="seccion galeria">
-      <h2 class="titulo-seccion">MIS RECUERDOS</h2>
+      <h2 class="titulo-seccion">GALERÍA DE FOTOS</h2>
       <div class="galeria-grid">
         <img src="foto 1.jpg" alt="Foto 1">
         <img src="foto 2.jpg" alt="Foto 2">
@@ -86,33 +100,29 @@
         <img src="foto 4.jpg" alt="Foto 4">
         <img src="foto 5.jpg" alt="Foto 5">
         <img src="foto 6.jpg" alt="Foto 6">
-        <img src="foto 7.jpg" alt="Foto 7">
-        <img src="foto 8.jpg" alt="Foto 8">
-        <img src="foto 9.jpg" alt="Foto 9">
-        <img src="foto 10.jpg" alt="Foto 10">
-        <img src="foto 11.jpg" alt="Foto 11">
       </div>
     </section>
 
-    <!-- DRESS CODE / VESTIMENTA -->
+    <!-- DRESS CODE -->
     <section class="seccion dresscode">
       <div class="card-info">
-        <i class="fa-solid fa-shirt icono-seccion"></i>
+        <i class="fa-solid fa-gem icono-seccion"></i>
         <h2>DRESS CODE</h2>
-        <p class="estilo-texto">Elegante / Formal</p>
+        <p class="estilo-texto">ELEGANTE SPORT</p>
+        <p class="nota-dress">SOLO ESTÁ PERMITIDO BLANCO Y NEGRO</p>
       </div>
     </section>
 
-    <!-- REGALOS / MERCADO PAGO -->
+    <!-- REGALOS -->
     <section class="seccion regalos-box">
       <div class="card-info">
         <i class="fa-solid fa-gift icono-seccion"></i>
         <h2>REGALOS</h2>
         <p class="regalos-p">
-          Tu presencia es mi mejor regalo, pero si deseas realizarme un obsequio puedes hacerlo a través de la siguiente cuenta:
+          NADA ES MÁS IMPORTANTE QUE TU PRESENCIA, PERO SI QUERÉS AÑADIR TU TOQUE ESPECIAL TE DEJO MI CUENTA
         </p>
         <div class="alias-card">
-          <p><strong>Alias MP:</strong> Nicole.mis.xv</p>
+          <p><strong>Alias:</strong> Nicole.aguiar.mis.15</p>
           <p><strong>Titular:</strong> Nicole Aguiar</p>
           <p><strong>CVU:</strong> 0000003100055991041744</p>
         </div>
@@ -122,11 +132,11 @@
     <!-- CONFIRMACIÓN DE ASISTENCIA -->
     <section class="seccion rsvp-box">
       <div class="card-info destacar-rsvp">
-        <i class="fa-brands fa-whatsapp icono-seccion wsp-color"></i>
-        <h2>CONFIRMACIÓN DE ASISTENCIA</h2>
-        <p class="rsvp-p">Por favor confirma tu presencia antes del 1 de Noviembre.</p>
-        <a class="btn-wsp" href="https://wa.me/541156167548?text=Hola!%20Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Bianca%20✨" target="_blank">
-          <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i>CONFIRMAR POR WHATSAPP
+        <i class="fa-solid fa-envelope-circle-check icono-seccion wsp-color"></i>
+        <h2>CONFIRMÁ TU ASISTENCIA</h2>
+        <p class="rsvp-p">Por favor confirma tu presencia.</p>
+        <a class="btn-wsp" href="https://wa.me/541156167548?text=Hola!%20Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Nicole%20✨" target="_blank">
+          <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i>CONFIRMAR ASISTENCIA
         </a>
       </div>
     </section>
