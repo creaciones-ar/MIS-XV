@@ -12,20 +12,21 @@ body {
 }
 
 /* Pantalla de bienvenida (Estilo original tuyo) */
-.welcome-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: opacity 0.8s ease;
+/* PANTALLA DE BIENVENIDA IDÉNTICA A LA REFERENCIA */
+.overlay {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  background-color: #ffffff;
+  color: #1b4568;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
 }
-
 .welcome-box {
     display: flex;
     flex-direction: column;
