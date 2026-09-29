@@ -59,14 +59,6 @@ body {
     background: #ffffff;
 }
 
-.guest-name {
-    font-size: 1.5rem;
-    color: #1b365d;
-    font-weight: 600;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-}
-
 .guest-text {
     font-size: 0.8rem;
     letter-spacing: 1.5px;
@@ -92,12 +84,10 @@ body {
     background-color: #0b1d3a;
 }
 
-/* Clase clave para ocultar la pantalla de bienvenida al hacer clic */
 .hidden {
     display: none !important;
 }
 
-/* Contenido Principal (Portada y secciones) */
 #main-content {
     width: 100%;
 }
@@ -111,43 +101,66 @@ body {
     justify-content: center;
 }
 
-/* Cuenta regresiva con textura contador.jpg */
+/* Sección Cuenta Regresiva con textura-flores.jpg */
 .countdown-section {
-    padding: 80px 20px;
+    padding: 100px 20px;
+    background-image: url('textura-flores.jpg');
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
 }
 
-.countdown-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+.countdown-title {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
     color: #1b365d;
+    margin-bottom: 40px;
+    line-height: 1.3;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
+.countdown-title span {
+    font-weight: 600;
+}
+
+/* Estilo de los números y separadores estilo Bianca */
 .countdown-grid {
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
 }
 
 .time-box {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 15px 20px;
-    border-radius: 10px;
-    min-width: 80px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
 }
 
 .time-box span {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 300;
     color: #1b365d;
-    display: block;
 }
 
 .time-box p {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: #555;
+    color: #1b365d;
+    margin-top: 5px;
+}
+
+.separator {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #1b365d;
+    margin-bottom: 20px;
 }
