@@ -1,285 +1,102 @@
-:root {
-  --color-principal: #1b4568; /* Azul Petróleo */
-  --color-blanco: #ffffff;
-  --color-texto-oscuro: #2E2E2E;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--color-blanco);
-  color: var(--color-texto-oscuro);
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-.main-container {
-  width: 100%;
-  max-width: 620px;
-  background-color: var(--color-blanco);
-  box-shadow: 0 0 30px rgba(0,0,0,0.08);
-}
-
-/* DISTRIBUCIÓN EN BLOQUES ALTERNADOS */
-.bloque-blanco {
-  background-color: var(--color-blanco);
-  color: var(--color-texto-oscuro);
-  padding: 60px 30px;
-  text-align: center;
-}
-
-.bloque-azul {
-  background-color: var(--color-principal);
-  color: #ffffff;
-  padding: 60px 30px;
-  text-align: center;
-}
-
-/* TIPOGRAFÍAS Y ENCABEZADOS */
-.subtitulo-xv {
-  font-size: 0.9rem;
-  letter-spacing: 4px;
-  color: #718096;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.titulo-nombre {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
-  color: var(--color-principal);
-  letter-spacing: 2px;
-  margin-bottom: 25px;
-}
-
-.banner-box {
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.foto-portada {
-  width: 100%;
-  display: block;
-}
-
-.titulo-seccion {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: var(--color-principal);
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-.titulo-seccion-blanco {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: #ffffff;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-.icono-seccion-azul {
-  font-size: 2.2rem;
-  color: var(--color-principal);
-  margin-bottom: 15px;
-}
-
-.icono-seccion-blanco {
-  font-size: 2.2rem;
-  color: #ffffff;
-  margin-bottom: 15px;
-}
-
-/* TEXTOS Y ESTILOS */
-.frase-texto-azul {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  letter-spacing: 1px;
-  color: #ffffff;
-}
-
-.texto-blanco-grande {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.texto-blanco-mediano {
-  font-size: 0.95rem;
-  opacity: 0.9;
-  margin-bottom: 20px;
-}
-
-.lugar-texto {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.direccion-texto {
-  color: #718096;
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-}
-
-/* CONTADOR REGRESIVO */
-.clock-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.time-block {
-  background: var(--color-principal);
-  color: #ffffff;
-  border-radius: 10px;
-  padding: 15px 12px;
-  flex: 1;
-}
-
-.time-block span {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
-.time-block small {
-  font-size: 0.6rem;
-  letter-spacing: 2px;
-}
-
-/* BOTONES Y TARJETAS */
-.btn-estilo-tarjeta {
-  display: inline-block;
-  background-color: var(--color-principal);
-  color: #ffffff;
-  text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-}
-
-.btn-wsp {
-  display: inline-block;
-  background-color: #ffffff;
-  color: var(--color-principal);
-  text-decoration: none;
-  padding: 14px 30px;
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* GALERÍA */
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.galeria-grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* REGALOS */
-.regalos-p {
-  font-size: 0.9rem;
-  color: #4a5568;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.alias-card {
-  background-color: #f8f9fa;
-  border: 1px dashed var(--color-principal);
-  padding: 18px;
-  border-radius: 10px;
-  line-height: 1.8;
-  font-size: 0.9rem;
-}
-
-/* OVERLAY DE BIENVENIDA (ESTILO SOBRE BLANCO) */
+/* PANTALLA DE BIENVENIDA IDÉNTICA A LA REFERENCIA */
 .overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  top: 0; 
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
   background-color: #ffffff;
-  color: var(--color-principal);
+  color: #1b4568;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.8s ease;
+  transition: opacity 1s ease;
 }
 
 .sobre-box {
   text-align: center;
   padding: 20px;
   width: 90%;
-  max-width: 400px;
+  max-width: 480px;
 }
 
 .overlay-sub {
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   letter-spacing: 4px;
-  color: #718096;
-  margin-bottom: 5px;
+  color: #555555;
+  font-weight: 400;
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .overlay-titulo {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  letter-spacing: 2px;
-  color: var(--color-principal);
-  margin-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  color: #1b4568;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-transform: uppercase;
 }
 
 .tarjeta-invitado {
-  border: 2px solid var(--color-principal);
+  background: #ffffff;
+  border: 1.5px solid #1b4568;
   border-radius: 16px;
-  padding: 25px 15px;
+  padding: 35px 20px 30px 20px;
   margin-bottom: 25px;
-  box-shadow: 0 10px 25px rgba(27, 69, 104, 0.1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(27, 69, 104, 0.08);
+}
+
+/* Barrita superior oscura de la tarjeta */
+.linea-superior-tarjeta {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 6px;
+  background-color: #1b4568;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .nombre-invitado {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: var(--color-principal);
-  margin-bottom: 8px;
+  color: #1b4568;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
 }
 
 .texto-lugar-invitado {
-  font-size: 0.8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
   letter-spacing: 1.5px;
-  color: #4a5568;
+  color: #2E2E2E;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 .btn-abrir {
   background: transparent;
-  color: var(--color-principal);
+  color: #1b4568;
   border: none;
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
   letter-spacing: 2px;
   cursor: pointer;
   padding: 10px;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+
+.btn-abrir:hover {
+  opacity: 0.6;
 }
