@@ -11,7 +11,7 @@ body {
     text-align: center;
 }
 
-/* Pantalla de bienvenida original */
+/* Pantalla de bienvenida */
 #welcome-screen {
     position: fixed;
     top: 0;
@@ -92,6 +92,7 @@ body {
     width: 100%;
 }
 
+/* Portada principal */
 .hero-section {
     height: 100vh;
     background-size: cover;
@@ -101,10 +102,21 @@ body {
     justify-content: center;
 }
 
-/* Sección Cuenta Regresiva (Estilo de la referencia) */
+.hero-overlay {
+    padding: 40px;
+    color: #1b365d;
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+/* Sección de Cuenta Regresiva con fondo de textura */
 .countdown-section {
     min-height: 100vh;
-    background-image: url('https://latarjetadigital.app/wp-content/uploads/2024/11/XVS.jpeg');
+    background-image: url('contador.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -112,21 +124,21 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 .countdown-title {
-    font-size: 2rem;
-    letter-spacing: 2px;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
     color: #1b365d;
-    margin-bottom: 30px;
-    font-weight: 400;
+    margin-bottom: 40px;
     line-height: 1.3;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 .countdown-title span {
     font-weight: 600;
-    display: block;
 }
 
 .countdown-grid {
@@ -140,25 +152,26 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 60px;
 }
 
 .time-box span {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 300;
     color: #1b365d;
 }
 
 .time-box p {
     font-size: 0.65rem;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: #1b365d;
     margin-top: 5px;
 }
 
 .separator {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 300;
     color: #1b365d;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
