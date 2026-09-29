@@ -1,63 +1,41 @@
-function abrirInvitacion() {
-  const overlay = document.getElementById("overlay");
-  if (overlay) {
-    overlay.style.opacity = "0";
-    setTimeout(() => {
-      overlay.style.display = "none";
-    }, 800);
-  }
+document.getElementById('open-btn').addEventListener('click', function() {
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const mainContent = document.getElementById('main-content');
+    const music = document.getElementById('background-music');
 
-  var audio = document.getElementById("musica");
-  if (audio) {
-    audio.volume = 0.5;
-    audio.play().then(() => {
-      console.log("Música iniciada correctamente.");
-    }).catch(function(error) {
-      console.log("Error al reproducir audio: ", error);
+    // Reproducir música
+    music.play().catch(error => {
+        console.log("Audio bloqueado por el navegador:", error);
     });
-  }
-}
 
-/* Lluvia de Estrellas Doradas Grandes */
-function crearEstrellas() {
-  const container = document.getElementById('estrellas-container');
-  if (!container) return;
+    // Ocultar pantalla de bienvenida y mostrar el contenido principal limpio
+    welcomeScreen.style.opacity = '0';
+    setTimeout(() => {
+        welcomeScreen.classList.add('hidden');
+        mainContent.classList.remove('hidden');
+    }, 600);
+});
 
-  for (let i = 0; i < 35; i++) {
-    const estrella = document.createElement('div');
-    estrella.className = 'estrella';
-    estrella.innerText = '✨';
-    estrella.style.left = Math.random() * 98 + 'vw';
-    estrella.style.animationDuration = (Math.random() * 3 + 2) + 's';
-    estrella.style.animationDelay = (Math.random() * 5) + 's';
-    estrella.style.fontSize = (Math.random() * 12 + 18) + 'px';
-    container.appendChild(estrella);
-  }
-}
+// Cuenta regresiva
+const eventDate = new Date("December 20, 2026 21:00:00").getTime();
 
-document.addEventListener("DOMContentLoaded", crearEstrellas);
+const countdownTimer = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
 
-/* Reloj Cuenta Regresiva */
-const fechaEvento = new Date(2026, 10, 15, 21, 0, 0).getTime();
+    if (distance < 0) {
+        clearInterval(countdownTimer);
+        document.getElementById("countdown").innerHTML = "¡Llegó el gran día!";
+        return;
+    }
 
-setInterval(function() {
-  const ahora = new Date().getTime();
-  const diferencia = fechaEvento - ahora;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  if (diferencia > 0) {
-    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
-    const dEl = document.getElementById("dias");
-    const hEl = document.getElementById("horas");
-    const mEl = document.getElementById("minutos");
-    const sEl = document.getElementById("segundos");
-
-    if (dEl) dEl.innerText = dias < 10 ? '0' + dias : dias;
-    if (hEl) hEl.innerText = horas < 10 ? '0' + horas : horas;
-    if (mEl) mEl.innerText = minutos < 10 ? '0' + minutos : minutos;
-    if (sEl) sEl.innerText = segundos < 10 ? '0' + segundos : segundos;
-  }
+    document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+    document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+    document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+    document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
 }, 1000);
