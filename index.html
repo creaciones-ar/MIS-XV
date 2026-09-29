@@ -18,13 +18,12 @@
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- PANTALLA DE BIENVENIDA / OVERLAY CON NOMBRE DE INVITADO -->
+  <!-- PANTALLA DE BIENVENIDA (ESTILO SOBRE BLANCO) -->
   <div id="overlay" class="overlay">
     <div class="sobre-box">
       <h3 class="overlay-sub">NICOLE</h3>
       <h1 class="overlay-titulo">MIS XV AÑOS</h1>
       
-      <!-- Tarjeta central del invitado -->
       <div class="tarjeta-invitado">
         <p class="nombre-invitado">ULI</p>
         <p class="texto-lugar-invitado">TENEMOS 1 LUGAR RESERVADO PARA VOS</p>
@@ -39,26 +38,22 @@
   <!-- CONTENEDOR PRINCIPAL -->
   <div class="main-container">
 
-    <!-- PORTADA -->
-    <header class="header-portada">
+    <!-- BLOQUE 1: BLANCO (PORTADA) -->
+    <section class="bloque-blanco">
+      <h3 class="subtitulo-xv">NICOLE</h3>
+      <h1 class="titulo-nombre">MIS XV AÑOS</h1>
       <div class="banner-box">
         <img src="imagenprimera.jpg" alt="Nicole XV" class="foto-portada">
       </div>
-      <h3 class="subtitulo-xv">MIS XV AÑOS</h3>
-      <h1 class="titulo-nombre">NICOLE</h1>
-    </header>
-
-    <!-- FRASE INSPIRACIONAL -->
-    <section class="seccion frase-box">
-      <div class="adorno-linea"></div>
-      <p class="frase-texto">
-        HAGAMOS QUE SEA UNA NOCHE ¡ÚNICA!
-      </p>
-      <div class="adorno-linea"></div>
     </section>
 
-    <!-- CONTADOR REGRESIVO -->
-    <section class="seccion contador-seccion">
+    <!-- BLOQUE 2: AZUL PETRÓLEO (FRASE) -->
+    <section class="bloque-azul">
+      <p class="frase-texto-azul">HAGAMOS QUE SEA UNA NOCHE ¡ÚNICA!</p>
+    </section>
+
+    <!-- BLOQUE 3: BLANCO (CUENTA REGRESIVA) -->
+    <section class="bloque-blanco">
       <h2 class="titulo-seccion">FALTAN TAN SOLO:</h2>
       <div id="cuenta-regresiva" class="clock-container">
         <div class="time-block"><span id="dias">00</span><small>DÍAS</small></div>
@@ -68,30 +63,37 @@
       </div>
     </section>
 
-    <!-- CUÁNDO Y DÓNDE -->
-    <section class="seccion info-evento">
-      <div class="card-info">
-        <i class="fa-solid fa-calendar-days icono-seccion"></i>
-        <h2>¿CUÁNDO?</h2>
-        <p class="fecha-destacada">15 DE NOVIEMBRE 2026</p>
-        <p class="lugar-texto">| 21:00 HS |</p>
-      </div>
+    <!-- BLOQUE 4: AZUL PETRÓLEO (CUÁNDO) -->
+    <section class="bloque-azul">
+      <i class="fa-solid fa-calendar-days icono-seccion-blanco"></i>
+      <h2 class="titulo-seccion-blanco">¿CUÁNDO?</h2>
+      <p class="texto-blanco-grande">15 DE NOVIEMBRE 2026</p>
+      <p class="texto-blanco-mediano">| 21:00 HS |</p>
     </section>
 
-    <section class="seccion info-evento">
-      <div class="card-info">
-        <i class="fa-solid fa-location-dot icono-seccion"></i>
-        <h2>¿DÓNDE?</h2>
-        <p class="lugar-texto">Salon Principal</p>
-        <p class="direccion-texto">Catamarca 1540, CABA</p>
-        <a class="btn-estilo-tarjeta" href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/" target="_blank">
-          LLEGAR AL EVENTO
-        </a>
-      </div>
+    <!-- BLOQUE 5: BLANCO (DÓNDE) -->
+    <section class="bloque-blanco">
+      <i class="fa-solid fa-location-dot icono-seccion-azul"></i>
+      <h2 class="titulo-seccion">¿DÓNDE?</h2>
+      <p class="lugar-texto">Salon Principal</p>
+      <p class="direccion-texto">Catamarca 1540, CABA</p>
+      <a class="btn-estilo-tarjeta" href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/" target="_blank">
+        LLEGAR AL EVENTO
+      </a>
     </section>
 
-    <!-- GALERÍA DE FOTOS -->
-    <section class="seccion galeria">
+    <!-- BLOQUE 6: AZUL PETRÓLEO (CONFIRMACIÓN) -->
+    <section class="bloque-azul">
+      <i class="fa-solid fa-envelope-open-text icono-seccion-blanco"></i>
+      <h2 class="titulo-seccion-blanco">CONFIRMÁ TU ASISTENCIA</h2>
+      <p class="texto-blanco-mediano">Por favor confirma tu presencia antes del 1 de Noviembre.</p>
+      <a class="btn-wsp" href="https://wa.me/541156167548?text=Hola!%20Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Nicole%20✨" target="_blank">
+        <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i>CONFIRMAR ASISTENCIA
+      </a>
+    </section>
+
+    <!-- BLOQUE 7: BLANCO (GALERÍA) -->
+    <section class="bloque-blanco">
       <h2 class="titulo-seccion">GALERÍA DE FOTOS</h2>
       <div class="galeria-grid">
         <img src="foto 1.jpg" alt="Foto 1">
@@ -103,41 +105,23 @@
       </div>
     </section>
 
-    <!-- DRESS CODE -->
-    <section class="seccion dresscode">
-      <div class="card-info">
-        <i class="fa-solid fa-gem icono-seccion"></i>
-        <h2>DRESS CODE</h2>
-        <p class="estilo-texto">ELEGANTE SPORT</p>
-        <p class="nota-dress">SOLO ESTÁ PERMITIDO BLANCO Y NEGRO</p>
-      </div>
+    <!-- BLOQUE 8: AZUL PETRÓLEO (DRESS CODE) -->
+    <section class="bloque-azul">
+      <i class="fa-solid fa-gem icono-seccion-blanco"></i>
+      <h2 class="titulo-seccion-blanco">DRESS CODE</h2>
+      <p class="texto-blanco-grande">ELEGANTE SPORT</p>
+      <p class="texto-blanco-mediano">SOLO ESTÁ PERMITIDO BLANCO Y NEGRO</p>
     </section>
 
-    <!-- REGALOS -->
-    <section class="seccion regalos-box">
-      <div class="card-info">
-        <i class="fa-solid fa-gift icono-seccion"></i>
-        <h2>REGALOS</h2>
-        <p class="regalos-p">
-          NADA ES MÁS IMPORTANTE QUE TU PRESENCIA, PERO SI QUERÉS AÑADIR TU TOQUE ESPECIAL TE DEJO MI CUENTA
-        </p>
-        <div class="alias-card">
-          <p><strong>Alias:</strong> Nicole.aguiar.mis.15</p>
-          <p><strong>Titular:</strong> Nicole Aguiar</p>
-          <p><strong>CVU:</strong> 0000003100055991041744</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONFIRMACIÓN DE ASISTENCIA -->
-    <section class="seccion rsvp-box">
-      <div class="card-info destacar-rsvp">
-        <i class="fa-solid fa-envelope-circle-check icono-seccion wsp-color"></i>
-        <h2>CONFIRMÁ TU ASISTENCIA</h2>
-        <p class="rsvp-p">Por favor confirma tu presencia.</p>
-        <a class="btn-wsp" href="https://wa.me/541156167548?text=Hola!%20Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Nicole%20✨" target="_blank">
-          <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i>CONFIRMAR ASISTENCIA
-        </a>
+    <!-- BLOQUE 9: BLANCO (REGALOS) -->
+    <section class="bloque-blanco">
+      <i class="fa-solid fa-gift icono-seccion-azul"></i>
+      <h2 class="titulo-seccion">REGALOS</h2>
+      <p class="regalos-p">NADA ES MÁS IMPORTANTE QUE TU PRESENCIA, PERO SI QUERÉS AÑADIR TU TOQUE ESPECIAL TE DEJO MI CUENTA</p>
+      <div class="alias-card">
+        <p><strong>Alias:</strong> Nicole.aguiar.mis.15</p>
+        <p><strong>Titular:</strong> Nicole Aguiar</p>
+        <p><strong>CVU:</strong> 0000003100055991041744</p>
       </div>
     </section>
 
