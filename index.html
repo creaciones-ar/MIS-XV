@@ -34,22 +34,23 @@
     }
 
     /* PANTALLA DE BIENVENIDA (TAL CUAL LA DEJASTE) */
-    .overlay {
-      position: fixed;
-      top: 0; 
-      left: 0;
-      width: 100vw; 
-      height: 100vh;
-      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('fondo.jpg');
-      background-size: cover;
-      background-position: center;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 1s ease;
-    }
+<!-- PANTALLA DE BIENVENIDA -->
+<div id="overlay" class="overlay">
+  <div class="sobre-box">
+    <h3 class="overlay-sub">NICOLE</h3>
+    <h1 class="overlay-titulo">MIS XV AÑOS</h1>
+    
+    <div class="tarjeta-invitado">
+      <div class="linea-superior-tarjeta"></div>
+      <p class="nombre-invitado">ULI</p>
+      <p class="texto-lugar-invitado">TENEMOS 1 LUGAR RESERVADO PARA VOS</p>
+    </div>
+
+    <button onclick="abrirInvitacion()" class="btn-abrir">
+      HAZ CLIC PARA INGRESAR
+    </button>
+  </div>
+</div>
 
     .sobre-box {
       text-align: center;
