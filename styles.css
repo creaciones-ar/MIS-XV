@@ -180,3 +180,85 @@ body {
     position: relative;
     top: -12px; 
 }
+
+/* Sección ¿Cuándo? (Estilo Bloque Azul) */
+.when-section {
+    background-color: #1b365d;
+    color: #ffffff;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.when-section .icon-box {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.when-section h2 {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.when-section p {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.when-section p span {
+    font-weight: 400;
+}
+
+/* Sección ¿Dónde? (Estilo Bloque Blanco) */
+.where-section {
+    background-color: #ffffff;
+    color: #1b365d;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.where-section .icon-box {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.where-section h2 {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.where-section h3 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.btn-map {
+    border: 1.5px solid #1b365d;
+    color: #1b365d;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-map:hover {
+    background-color: #1b365d;
+    color: #ffffff;
+}
