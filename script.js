@@ -5,10 +5,10 @@ document.getElementById('open-btn').addEventListener('click', function() {
 
     // Reproducir música
     music.play().catch(error => {
-        console.log("El navegador requirió interacción previa para reproducir audio:", error);
+        console.log("Reproducción automática bloqueada por el navegador:", error);
     });
 
-    // Ocultar pantalla de bienvenida y mostrar la invitación
+    // Desvanecer pantalla inicial
     welcomeScreen.style.opacity = '0';
     setTimeout(() => {
         welcomeScreen.style.display = 'none';
@@ -16,7 +16,7 @@ document.getElementById('open-btn').addEventListener('click', function() {
     }, 800);
 });
 
-// Configura aquí la fecha exacta de tu fiesta (Ejemplo: 20 de Diciembre de 2026 a las 21:00 hs)
+// Configura la fecha de los 15 (puedes cambiarla cuando quieras)
 const eventDate = new Date("December 20, 2026 21:00:00").getTime();
 
 const countdownTimer = setInterval(() => {
@@ -25,7 +25,7 @@ const countdownTimer = setInterval(() => {
 
     if (distance < 0) {
         clearInterval(countdownTimer);
-        document.getElementById("countdown").innerHTML = "¡L llegó el gran día!";
+        document.getElementById("countdown").innerHTML = "¡Llegó el gran día!";
         return;
     }
 
