@@ -1,41 +1,63 @@
-document.getElementById('open-btn').addEventListener('click', function() {
-    const welcomeScreen = document.getElementById('welcome-screen');
-    const mainContent = document.getElementById('main-content');
-    const music = document.getElementById('background-music');
-
-    // Reproducir música
-    music.play().catch(error => {
-        console.log("Reproducción automática bloqueada por el navegador:", error);
-    });
-
-    // Desvanecer pantalla inicial
-    welcomeScreen.style.opacity = '0';
+function abrirInvitacion() {
+  const overlay = document.getElementById("overlay");
+  if (overlay) {
+    overlay.style.opacity = "0";
     setTimeout(() => {
-        welcomeScreen.style.display = 'none';
-        mainContent.classList.remove('hidden');
+      overlay.style.display = "none";
     }, 800);
-});
+  }
 
-// Configura la fecha de los 15 (puedes cambiarla cuando quieras)
-const eventDate = new Date("December 20, 2026 21:00:00").getTime();
+  var audio = document.getElementById("musica");
+  if (audio) {
+    audio.volume = 0.5;
+    audio.play().then(() => {
+      console.log("Música iniciada correctamente.");
+    }).catch(function(error) {
+      console.log("Error al reproducir audio: ", error);
+    });
+  }
+}
 
-const countdownTimer = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
+/* Lluvia de Estrellas Doradas Grandes */
+function crearEstrellas() {
+  const container = document.getElementById('estrellas-container');
+  if (!container) return;
 
-    if (distance < 0) {
-        clearInterval(countdownTimer);
-        document.getElementById("countdown").innerHTML = "¡Llegó el gran día!";
-        return;
-    }
+  for (let i = 0; i < 35; i++) {
+    const estrella = document.createElement('div');
+    estrella.className = 'estrella';
+    estrella.innerText = '✨';
+    estrella.style.left = Math.random() * 98 + 'vw';
+    estrella.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    estrella.style.animationDelay = (Math.random() * 5) + 's';
+    estrella.style.fontSize = (Math.random() * 12 + 18) + 'px';
+    container.appendChild(estrella);
+  }
+}
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+document.addEventListener("DOMContentLoaded", crearEstrellas);
 
-    document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-    document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-    document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-    document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+/* Reloj Cuenta Regresiva */
+const fechaEvento = new Date(2026, 10, 15, 21, 0, 0).getTime();
+
+setInterval(function() {
+  const ahora = new Date().getTime();
+  const diferencia = fechaEvento - ahora;
+
+  if (diferencia > 0) {
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+    const dEl = document.getElementById("dias");
+    const hEl = document.getElementById("horas");
+    const mEl = document.getElementById("minutos");
+    const sEl = document.getElementById("segundos");
+
+    if (dEl) dEl.innerText = dias < 10 ? '0' + dias : dias;
+    if (hEl) hEl.innerText = horas < 10 ? '0' + horas : horas;
+    if (mEl) mEl.innerText = minutos < 10 ? '0' + minutos : minutos;
+    if (sEl) sEl.innerText = segundos < 10 ? '0' + segundos : segundos;
+  }
 }, 1000);
