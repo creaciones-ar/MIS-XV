@@ -1,102 +1,153 @@
-/* PANTALLA DE BIENVENIDA IDÉNTICA A LA REFERENCIA */
-.overlay {
-  position: fixed;
-  top: 0; 
-  left: 0;
-  width: 100vw; 
-  height: 100vh;
-  background-color: #ffffff;
-  color: #1b4568;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 1s ease;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.sobre-box {
-  text-align: center;
-  padding: 20px;
-  width: 90%;
-  max-width: 480px;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #1b365d;
+    text-align: center;
 }
 
-.overlay-sub {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 4px;
-  color: #555555;
-  font-weight: 400;
-  margin-bottom: 8px;
-  text-transform: uppercase;
+/* Pantalla de bienvenida original */
+#welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease;
 }
 
-.overlay-titulo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
-  letter-spacing: 3px;
-  color: #1b4568;
-  font-weight: 400;
-  margin-bottom: 30px;
-  text-transform: uppercase;
+.welcome-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    padding: 20px;
 }
 
-.tarjeta-invitado {
-  background: #ffffff;
-  border: 1.5px solid #1b4568;
-  border-radius: 16px;
-  padding: 35px 20px 30px 20px;
-  margin-bottom: 25px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(27, 69, 104, 0.08);
+.welcome-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: #4a5568;
+    margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
-/* Barrita superior oscura de la tarjeta */
-.linea-superior-tarjeta {
-  position: absolute;
-  top: 0;
-  left: 25%;
-  width: 50%;
-  height: 6px;
-  background-color: #1b4568;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
+.welcome-title {
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    color: #1b365d;
+    font-weight: 400;
+    margin-bottom: 25px;
 }
 
-.nombre-invitado {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #1b4568;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-  text-transform: uppercase;
+.guest-card {
+    border: 1.5px solid #1b365d;
+    border-radius: 12px;
+    padding: 25px 35px;
+    width: 100%;
+    margin-bottom: 25px;
+    background: #ffffff;
 }
 
-.texto-lugar-invitado {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 1.5px;
-  color: #2E2E2E;
-  font-weight: 600;
-  text-transform: uppercase;
+.guest-name {
+    font-size: 1.5rem;
+    color: #1b365d;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
 }
 
-.btn-abrir {
-  background: transparent;
-  color: #1b4568;
-  border: none;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  cursor: pointer;
-  padding: 10px;
-  text-transform: uppercase;
-  transition: opacity 0.2s;
+.guest-text {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    color: #2d3748;
+    text-transform: uppercase;
 }
 
-.btn-abrir:hover {
-  opacity: 0.6;
+.btn-enter {
+    background-color: #1b365d;
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.btn-enter:hover {
+    background-color: #0b1d3a;
+}
+
+/* Clase clave para ocultar la pantalla de bienvenida al hacer clic */
+.hidden {
+    display: none !important;
+}
+
+/* Contenido Principal (Portada y secciones) */
+#main-content {
+    width: 100%;
+}
+
+.hero-section {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* Cuenta regresiva con textura contador.jpg */
+.countdown-section {
+    padding: 80px 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.countdown-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #1b365d;
+}
+
+.countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 20px;
+    border-radius: 10px;
+    min-width: 80px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.time-box span {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #1b365d;
+    display: block;
+}
+
+.time-box p {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #555;
 }
