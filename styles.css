@@ -101,17 +101,19 @@ body {
     justify-content: center;
 }
 
-/* Sección Cuenta Regresiva con textura-flores.jpg */
+/* Sección Cuenta Regresiva ajustada con la textura de flores de fondo */
 .countdown-section {
     padding: 100px 20px;
     background-image: url('textura-flores.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 80vh;
+    width: 100%;
 }
 
 .countdown-title {
@@ -128,7 +130,7 @@ body {
     font-weight: 600;
 }
 
-/* Estilo de los números y separadores estilo Bianca */
+/* Estilo limpio sin cajas blancas (igual a tu referencia) */
 .countdown-grid {
     display: flex;
     align-items: center;
@@ -142,6 +144,9 @@ body {
     flex-direction: column;
     align-items: center;
     min-width: 60px;
+    background: transparent; /* Sin fondo blanco */
+    box-shadow: none; /* Sin sombra */
+    padding: 0;
 }
 
 .time-box span {
@@ -159,7 +164,7 @@ body {
 }
 
 .separator {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 300;
     color: #1b365d;
     margin-bottom: 20px;
