@@ -262,3 +262,20 @@ body {
     background-color: #1b365d;
     color: #ffffff;
 }
+
+
+.photo-section {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-photo {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+}
