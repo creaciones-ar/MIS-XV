@@ -263,6 +263,10 @@ body {
     color: #ffffff;
 }
 
+/* Asegurar ancho completo en las secciones */
+.when-section, .where-section {
+    width: 100%;
+}
 
 .photo-section {
     width: 100%;
