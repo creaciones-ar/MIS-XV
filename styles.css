@@ -283,3 +283,57 @@ body {
     height: auto;
     display: block;
 }
+
+
+.gifts-section {
+    background-color: #1b365d;
+    color: #ffffff;
+    width: 100%;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.gifts-section .icon-box {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.gifts-section h2 {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.gifts-section p {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.btn-gift {
+    background: transparent;
+    border: 1.5px solid #ffffff;
+    color: #ffffff;
+    padding: 12px 30px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-gift:hover {
+    background-color: #ffffff;
+    color: #1b365d;
+}
