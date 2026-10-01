@@ -337,3 +337,74 @@ body {
     background-color: #ffffff;
     color: #1b365d;
 }
+
+
+
+/* Estilos para el Modal de Regalos */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #1b365d;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 30px;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.modal-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.bank-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bank-label {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: #a0aec0;
+    margin-top: 5px;
+}
+
+.bank-value {
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
