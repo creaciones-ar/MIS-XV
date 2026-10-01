@@ -39,3 +39,26 @@ const countdownTimer = setInterval(() => {
     document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
     document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
 }, 1000);
+
+
+// Lógica para abrir y cerrar el modal de regalos
+const btnGift = document.querySelector('.btn-gift');
+const giftModal = document.getElementById('gift-modal');
+const closeModal = document.getElementById('close-modal');
+
+if (btnGift && giftModal && closeModal) {
+    btnGift.addEventListener('click', () => {
+        giftModal.classList.remove('hidden');
+    });
+
+    closeModal.addEventListener('click', () => {
+        giftModal.classList.add('hidden');
+    });
+
+    // Cerrar también si hacen clic fuera de la caja del modal
+    giftModal.addEventListener('click', (e) => {
+        if (e.target === giftModal) {
+            giftModal.classList.add('hidden');
+        }
+    });
+}
