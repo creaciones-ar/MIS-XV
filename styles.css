@@ -422,7 +422,6 @@ body {
     text-align: center;
 }
 
-/* Animación de la cámara (inclinación sutil) */
 .camera-container {
     height: 70px;
     display: flex;
@@ -451,6 +450,7 @@ body {
     letter-spacing: 3px;
     font-weight: 400;
     margin-bottom: 20px;
+    color: #1b365d;
 }
 
 .album-section p {
@@ -461,6 +461,7 @@ body {
     max-width: 500px;
     margin-bottom: 30px;
     text-transform: uppercase;
+    color: #1b365d;
 }
 
 .btn-album {
@@ -474,6 +475,7 @@ body {
     border-radius: 25px;
     transition: all 0.3s ease;
     text-transform: uppercase;
+    display: inline-block;
 }
 
 .btn-album:hover {
