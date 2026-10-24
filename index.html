@@ -1,142 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis 15 Años - Nicole</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis XV - Jesica</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Pantalla de Entrada -->
-    <div id="welcome-screen">
-        <div class="welcome-content">
-            <p class="welcome-subtitle">Nicole</p>
-            <h1 class="welcome-title">MIS XV AÑOS</h1>
-            
-            <div class="guest-card">
-                <div class="guest-text">TENEMOS 1 LUGAR RESERVADO PARA VOS</div>
-            </div>
-
-            <button id="open-btn" class="btn-enter">Haz clic para ingresar</button>
-        </div>
-    </div>
-
-    <!-- Audio de fondo -->
-    <audio id="background-music" loop>
-        <source src="musica.mp3" type="audio/mpeg">
-        Tu navegador no soporta el elemento de audio.
-    </audio>
-
-    <!-- Contenido Principal -->
-    <main id="main-content" class="hidden">
-
-        <!-- Cuenta Regresiva -->
-        <section class="countdown-section">
-            <h2 class="countdown-title">
-                MIS XV<br>
-                <span>NICOLE</span>
-            </h2>
-            <div id="countdown" class="countdown-grid">
-                <div class="time-box">
-                    <span id="days">0</span>
-                    <p>Días</p>
-                </div>
-                <div class="separator">:</div>
-                <div class="time-box">
-                    <span id="hours">0</span>
-                    <p>Horas</p>
-                </div>
-                <div class="separator">:</div>
-                <div class="time-box">
-                    <span id="minutes">0</span>
-                    <p>Minutos</p>
-                </div>
-                <div class="separator">:</div>
-                <div class="time-box">
-                    <span id="seconds">0</span>
-                    <p>Segundos</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección ¿Cuándo? -->
-        <section class="when-section">
-            <div class="icon-box">📅</div>
-            <h2>¿CUÁNDO?</h2>
-            <p>XX DE XXXXX 2026<br><span>| 00:00 HS |</span></p>
-        </section>
-
-        <!-- Sección ¿Dónde? -->
-        <section class="where-section">
-            <div class="icon-box">🪩</div>
-            <h2>¿DÓNDE?</h2>
-            <h3>XXXXXXXX XXXX</h3>
-            <a href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.6280964,-58.4048353,17z/data=!3m1!4b1!4m6!3m5!1s0x95bccb1c771a4bbf:0x97a075f8cc40fa1d!8m2!3d-34.6281008!4d-58.402255!16s%2Fg%2F11cpnz_938?entry=ttu&g_ep=EgoyMDI2MDkyNy4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-map">COMO LLEGAR</a>
-        </section>
-
-<!-- Franja Mis XV Nicole -->
-        <section class="banner-xv-section">
-            <h2 class="banner-xv-title">
-                MIS XV<br>
-                <span>NICOLE</span>
-            </h2>
-        </section>
-
-        <!-- Sección de Foto -->
-        <section class="photo-section">
-            <img src="foto8.jpg" alt="Foto8" class="content-photo">
-        </section>
-
-        
-<!-- Sección Regalos -->
-<section class="gifts-section">
-    <div class="gift-box-container">
-        <div class="gift-box">
-            <img src="icono-12.gif" alt="Regalo" width="70" height="70">
-        </div>
-    </div>
-    <h2>REGALOS</h2>
-    <p>NADA ES MÁS IMPORTANTE QUE TU PRESENCIA, PERO SI QUERES AÑADIR TU TOQUE ESPECIAL, TE DEJO MI CUENTA</p>
-    <button class="btn-gift">VER CUENTA</button>
-</section>
-
-<!-- Modal de Regalos (Ventana Emergente) -->
-<div id="gift-modal" class="modal-overlay hidden">
-    <div class="modal-content">
-        <button id="close-modal" class="modal-close">&times;</button>
-        <div class="modal-icon">
-            <img src="icono-12.gif" alt="Regalo" width="50" height="50">
-        </div>
-        <h2>REGALOS</h2>
-        <div class="bank-info">
-            <p class="bank-label">ALIAS:</p>
-            <p class="bank-value">MIS15.XXXXX</p>
-            
-            <p class="bank-label">CVU:</p>
-            <p class="bank-value">0000003100091294727784</p>
-            
-            <p class="bank-label">TITULAR:</p>
-            <p class="bank-value">XXXXX XXXXXX XXXXXXX</p>
-        </div>
-    </div>
+<!-- 1. SOBRE -->
+<div id="welcome-screen">
+  <h1 class="neon">Jesica</h1>
+  <p class="welcome-sub">Mis quince años</p>
+  <button id="open-btn" class="envelope" aria-label="Abrir invitación">
+    <span class="flap"></span><span class="seal"></span>
+  </button>
+  <p class="welcome-hint">Presiona el sobre para abrirlo</p>
 </div>
-        
-<!-- Sección Álbum Compartido -->
-<section class="album-section">
-    <div class="camera-container">
-        <div class="camera-icon">
-            <img src="icono-6.gif" alt="Cámara" width="70" height="70">
-        </div>
-    </div>
-    <h2>QUIERO VER TUS FOTOS</h2>
-    <p>PUEDEN SUBIR TODAS SUS FOTOS DEL EVENTO A MI ÁLBUM COMPARTIDO</p>
-    <a href="https://drive.google.com/drive/folders/1cwxRKNiBOcKX7a17-oT37S8wnxkEBRUm?usp=sharing" target="_blank" class="btn-album">IR AL ÁLBUM</a>
-</section>
-        
-    </main>
 
-    <script src="script.js"></script>
+<div id="yt-player"></div>
+
+<main id="main-content" class="hidden">
+
+  <!-- 2. PORTADA + REPRODUCTOR -->
+  <section class="cover">
+    <div class="cover-card">
+      <div class="tiara">👑</div>
+      <p class="script">It's my birthday</p>
+      <h2 class="cover-name">JESICA XV</h2>
+      <div class="player">
+        <input type="range" id="progress" min="0" max="100" value="0" aria-label="Progreso">
+        <div class="controls">
+          <button id="btn-shuffle" aria-label="Aleatorio">🔀</button>
+          <button id="btn-prev" aria-label="Anterior">⏮</button>
+          <button id="btn-play" class="play" aria-label="Reproducir / pausar">❚❚</button>
+          <button id="btn-next" aria-label="Siguiente">⏭</button>
+          <button id="btn-repeat" aria-label="Repetir" class="on">🔁</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CUENTA REGRESIVA -->
+  <section class="countdown-section">
+    <h2 class="script big">Faltan</h2>
+    <div id="countdown" class="countdown-grid">
+      <div class="time-box"><span id="days">00</span><p>Días</p></div>
+      <div class="time-box"><span id="hours">00</span><p>Horas</p></div>
+      <div class="time-box"><span id="minutes">00</span><p>Min</p></div>
+      <div class="time-box"><span id="seconds">00</span><p>Seg</p></div>
+    </div>
+  </section>
+
+  <!-- 4. FOTOS + TEXTO -->
+  <section class="story-section">
+    <div class="story-photos">
+      <img src="foto1.jpg" alt="Jesica" class="photo">
+      <img src="foto2.jpg" alt="Jesica" class="photo">
+    </div>
+    <p class="story-text">Hace 15 años, Dios me regaló la vida y me rodeó de amor. Hoy, con el corazón lleno de gratitud por cada bendición recibida, quiero celebrar este momento tan especial junto a las personas que forman parte de mi historia.<br><br>Por eso no puedo imaginar esta noche tan especial sin tu compañía.</p>
+  </section>
+
+  <!-- 5. CUÁNDO -->
+  <section class="block dark">
+    <div class="icon">📅</div>
+    <h2>¿Cuándo?</h2>
+    <p class="big-line">Domingo 21 de febrero de 2027</p>
+    <p>21:00 hs</p>
+  </section>
+
+  <!-- 6. DÓNDE -->
+  <section class="block light">
+    <div class="icon">🦋</div>
+    <h2>¿Dónde?</h2>
+    <h3>Jano's Boutique 2</h3>
+    <p>Saavedra 649, B1704<br>Ramos Mejía</p>
+    <a class="btn outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Saavedra+649+Ramos+Mejia">Cómo llegar</a>
+  </section>
+
+  <!-- 7. GALERÍA -->
+  <section class="gallery-section">
+    <h2 class="script big">Mis momentos</h2>
+    <div class="gallery">
+      <img src="foto3.jpg" alt="Foto 3" class="photo tall">
+      <img src="foto4.jpg" alt="Foto 4" class="photo">
+      <img src="foto5.jpg" alt="Foto 5" class="photo">
+      <img src="foto6.jpg" alt="Foto 6" class="photo tall">
+    </div>
+  </section>
+
+  <!-- 8. REGALOS -->
+  <section class="block dark">
+    <div class="icon">🎁</div>
+    <h2>Regalos</h2>
+    <p class="narrow">Nada es más importante que tu presencia, pero si querés sumar tu toque especial, te dejo mi alias.</p>
+    <button class="btn light-outline" id="btn-gift">Ver alias</button>
+  </section>
+
+  <!-- 9. ÁLBUM + QR -->
+  <section class="block light">
+    <div class="icon">📸</div>
+    <h2>Quiero ver tus fotos</h2>
+    <p class="narrow">Escaneá el código QR o tocá el botón para subir tus fotos de la fiesta a mi álbum compartido.</p>
+    <img id="qr" class="qr" alt="QR del álbum compartido" width="180" height="180">
+    <a id="album-link" class="btn solid" target="_blank" rel="noopener" href="#">Ir al álbum</a>
+  </section>
+
+  <!-- 10. CONFIRMACIÓN -->
+  <section class="block dark">
+    <div class="icon">💌</div>
+    <h2>Confirmá tu asistencia</h2>
+    <p>Antes del 1 de febrero</p>
+    <a id="wa-btn" class="btn light-outline" target="_blank" rel="noopener" href="#">Confirmar por WhatsApp</a>
+  </section>
+
+  <!-- 11. CIERRE -->
+  <section class="closing">
+    <p>Los esperamos con mucha ilusión para compartir juntos este momento único, agradeciendo a Dios por la bendición de reunirnos y celebrar la alegría de estar juntos. Será un honor contar con tu presencia. 🤍✨</p>
+    <p class="script big">Jesica</p>
+  </section>
+</main>
+
+<div id="gift-modal" class="modal-overlay hidden">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close" aria-label="Cerrar">&times;</button>
+    <h2>Regalos</h2>
+    <p class="bank-label">Alias</p>
+    <p class="bank-value" id="alias">prichug13</p>
+    <button class="btn light-outline" id="copy-alias">Copiar alias</button>
+  </div>
+</div>
+
+<div class="butterflies" aria-hidden="true"></div>
+<script src="script.js"></script>
 </body>
 </html>
