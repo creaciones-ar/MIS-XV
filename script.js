@@ -1,64 +1,95 @@
-document.getElementById('open-btn').addEventListener('click', function() {
-    const welcomeScreen = document.getElementById('welcome-screen');
-    const mainContent = document.getElementById('main-content');
-    const music = document.getElementById('background-music');
+/* ===== CONFIGURACIÓN (editar solo acá) ===== */
+const CONFIG = {
+  fecha: "February 21, 2027 21:00:00",
+  youtubeId: "rtOvBOTyX00",
+  whatsapp: "5491178501814", // 54 + 9 + número
+  albumUrl: "https://drive.google.com/drive/folders/PEGAR-LINK-ACA", // carpeta compartida de Drive
+  mensajeWa: "Hola! Confirmo mi asistencia a los XV de Jesica 🦋"
+};
 
-    // Reproducir música
-    music.play().catch(error => {
-        console.log("Audio bloqueado por el navegador:", error);
-    });
+/* ===== Links, QR ===== */
+document.getElementById('album-link').href = CONFIG.albumUrl;
+document.getElementById('qr').src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data=' + encodeURIComponent(CONFIG.albumUrl);
+document.getElementById('wa-btn').href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(CONFIG.mensajeWa)}`;
 
-    // Ocultar pantalla de bienvenida y mostrar el contenido principal
-    welcomeScreen.style.opacity = '0';
+/* ===== Música (YouTube oculto + reproductor propio) ===== */
+let yt, ticker, ready = false, wantPlay = false;
+const $ = id => document.getElementById(id);
+const playBtn = $('btn-play'), bar = $('progress');
+
+const tag = document.createElement('script');
+tag.src = 'https://www.youtube.com/iframe_api';
+document.head.appendChild(tag);
+
+window.onYouTubeIframeAPIReady = () => {
+  yt = new YT.Player('yt-player', {
+    height: '1', width: '1', videoId: CONFIG.youtubeId,
+    playerVars: { playsinline: 1, controls: 0, loop: 1, playlist: CONFIG.youtubeId },
+    events: {
+      onReady: () => { ready = true; if (wantPlay) yt.playVideo(); },
+      onStateChange: e => {
+        const playing = e.data === YT.PlayerState.PLAYING;
+        playBtn.textContent = playing ? '❚❚' : '▶';
+        clearInterval(ticker);
+        if (playing) ticker = setInterval(() => {
+          bar.value = (yt.getCurrentTime() / yt.getDuration()) * 100 || 0;
+        }, 500);
+      }
+    }
+  });
+};
+const isPlaying = () => ready && yt.getPlayerState() === 1;
+playBtn.onclick = () => ready && (isPlaying() ? yt.pauseVideo() : yt.playVideo());
+bar.oninput = () => ready && yt.seekTo(yt.getDuration() * bar.value / 100, true);
+$('btn-prev').onclick = $('btn-next').onclick = () => ready && (yt.seekTo(0, true), yt.playVideo());
+$('btn-repeat').onclick = e => e.currentTarget.classList.toggle('on');
+$('btn-shuffle').onclick = e => e.currentTarget.classList.toggle('on');
+$('yt-player').style.cssText = 'position:fixed;left:-9999px;width:1px;height:1px';
+
+/* ===== Abrir sobre ===== */
+$('open-btn').addEventListener('click', function () {
+  this.classList.add('open');
+  wantPlay = true; if (ready) yt.playVideo();
+  setTimeout(() => {
+    $('welcome-screen').style.opacity = '0';
     setTimeout(() => {
-        welcomeScreen.classList.add('hidden');
-        mainContent.classList.remove('hidden');
+      $('welcome-screen').classList.add('hidden');
+      $('main-content').classList.remove('hidden');
+      window.scrollTo(0, 0);
     }, 600);
+  }, 600);
 });
 
-// Cuenta regresiva
-const eventDate = new Date("December 20, 2026 21:00:00").getTime();
-
-const countdownTimer = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-
-    if (distance < 0) {
-        clearInterval(countdownTimer);
-        document.getElementById("countdown").innerHTML = "¡Llegó el gran día!";
-        return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-    document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-    document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-    document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+/* ===== Cuenta regresiva ===== */
+const eventDate = new Date(CONFIG.fecha).getTime();
+const pad = n => String(n).padStart(2, '0');
+const timer = setInterval(() => {
+  const d = eventDate - Date.now();
+  if (d < 0) { clearInterval(timer); $('countdown').textContent = '¡Llegó el gran día!'; return; }
+  $('days').textContent = pad(Math.floor(d / 864e5));
+  $('hours').textContent = pad(Math.floor(d % 864e5 / 36e5));
+  $('minutes').textContent = pad(Math.floor(d % 36e5 / 6e4));
+  $('seconds').textContent = pad(Math.floor(d % 6e4 / 1e3));
 }, 1000);
 
+/* ===== Modal regalos ===== */
+const modal = $('gift-modal');
+$('btn-gift').onclick = () => modal.classList.remove('hidden');
+$('close-modal').onclick = () => modal.classList.add('hidden');
+modal.onclick = e => { if (e.target === modal) modal.classList.add('hidden'); };
+$('copy-alias').onclick = async e => {
+  try { await navigator.clipboard.writeText($('alias').textContent); e.target.textContent = '¡Copiado!'; } catch { }
+};
 
-// Lógica para abrir y cerrar el modal de regalos
-const btnGift = document.querySelector('.btn-gift');
-const giftModal = document.getElementById('gift-modal');
-const closeModal = document.getElementById('close-modal');
-
-if (btnGift && giftModal && closeModal) {
-    btnGift.addEventListener('click', () => {
-        giftModal.classList.remove('hidden');
-    });
-
-    closeModal.addEventListener('click', () => {
-        giftModal.classList.add('hidden');
-    });
-
-    // Cerrar también si hacen clic fuera de la caja del modal
-    giftModal.addEventListener('click', (e) => {
-        if (e.target === giftModal) {
-            giftModal.classList.add('hidden');
-        }
-    });
+/* ===== Mariposas ===== */
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  setInterval(() => {
+    const b = document.createElement('span');
+    b.className = 'bf'; b.textContent = '🦋';
+    b.style.left = Math.random() * 100 + 'vw';
+    b.style.setProperty('--dx', (Math.random() * 120 - 60) + 'px');
+    b.style.animationDuration = (8 + Math.random() * 6) + 's';
+    document.querySelector('.butterflies').appendChild(b);
+    setTimeout(() => b.remove(), 15000);
+  }, 2500);
 }
