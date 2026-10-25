@@ -73,10 +73,6 @@ const timer = setInterval(() => {
 }, 1000);
 
 /* ===== Modal regalos ===== */
-const modal = $('gift-modal');
-$('btn-gift').onclick = () => modal.classList.remove('hidden');
-$('close-modal').onclick = () => modal.classList.add('hidden');
-modal.onclick = e => { if (e.target === modal) modal.classList.add('hidden'); };
 $('copy-alias').onclick = async e => {
   try { await navigator.clipboard.writeText($('alias').textContent); e.target.textContent = '¡Copiado!'; } catch { }
 };
