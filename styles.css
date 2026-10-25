@@ -107,3 +107,7 @@ body{background:linear-gradient(#dbe6f3,#e8eff8);background-attachment:fixed}
 .page{background:url('fondo-arriba.webp') top center/100% auto no-repeat,url('fondo-abajo.webp') bottom center/100% auto no-repeat,#f6f8fb}
 .cover,.story-section,.date-section,.center-section,.place-section,.duo,.rsvp,.closing{background:none}
 .closing{padding-bottom:150px}
+
+/* Portada compacta: el contenido empieza arriba, sin hueco */
+.cover{min-height:0;justify-content:flex-start;padding:105px 24px 6px;gap:4px}
+.story-section{padding-top:30px}
