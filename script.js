@@ -76,3 +76,13 @@ const timer = setInterval(() => {
 $('copy-alias').onclick = async e => {
   try { await navigator.clipboard.writeText($('alias').textContent); e.target.textContent = '¡Copiado!'; } catch { }
 };
+
+/* ===== Fotos: si una no carga, prueba otras extensiones (.jpeg, .JPG, .png...) ===== */
+document.querySelectorAll('img[src^="foto"]').forEach(img => {
+  const base = img.getAttribute('src').replace(/\.\w+$/, '');
+  const exts = ['jpeg', 'JPG', 'JPEG', 'png', 'PNG', 'webp'];
+  let i = 0;
+  const retry = () => { if (i < exts.length) img.src = base + '.' + exts[i++]; };
+  img.addEventListener('error', retry);
+  if (img.complete && img.naturalWidth === 0) retry();
+});
