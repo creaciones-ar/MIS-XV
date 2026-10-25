@@ -48,7 +48,7 @@ $('yt-player').style.cssText = 'position:fixed;left:-9999px;width:1px;height:1px
 
 /* ===== Abrir sobre ===== */
 $('open-btn').addEventListener('click', function () {
-  document.querySelector('.welcome-frame').classList.add('zoom');
+  this.classList.add('open');
   wantPlay = true; if (ready) yt.playVideo();
   setTimeout(() => {
     $('welcome-screen').style.opacity = '0';
