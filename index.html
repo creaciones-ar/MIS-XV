@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mis XV - Jesica</title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- VERSION 3 -->
+<link rel="stylesheet" href="styles.css?v=4">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -16,7 +17,7 @@
     <h1 class="neon">Jesica</h1>
     <p class="welcome-sub">Mis quince años</p>
     <button id="open-btn" class="envelope-btn" aria-label="Abrir invitación">
-      <img src="sobre-bienvenida.png" alt="Sobre de invitación" class="envelope-img">
+      <img src="sobre-bienvenida.png?v=3" alt="Sobre de invitación" class="envelope-img">
     </button>
     <p class="welcome-hint">Presiona el sobre para abrirlo</p>
   </div>
@@ -26,51 +27,52 @@
 
 <main id="main-content" class="hidden">
 
-  <!-- 2. PORTADA + REPRODUCTOR -->
+  <div class="page">
+
+  <!-- 2. PORTADA -->
   <section class="cover">
-    <div class="cover-card">
-      <div class="tiara">👑</div>
-      <p class="script">It's my birthday</p>
-      <h2 class="cover-name">JESICA XV</h2>
-      <div class="player">
-        <input type="range" id="progress" min="0" max="100" value="0" aria-label="Progreso">
-        <div class="controls">
-          <button id="btn-shuffle" aria-label="Aleatorio">🔀</button>
-          <button id="btn-prev" aria-label="Anterior">⏮</button>
-          <button id="btn-play" class="play" aria-label="Reproducir / pausar">❚❚</button>
-          <button id="btn-next" aria-label="Siguiente">⏭</button>
-          <button id="btn-repeat" aria-label="Repetir" class="on">🔁</button>
-        </div>
+    <img src="tiara.png" alt="" class="tiara">
+    <h2 class="cover-name">Jesica</h2>
+    <div class="player">
+      <input type="range" id="progress" min="0" max="100" value="0" aria-label="Progreso">
+      <div class="controls">
+        <button id="btn-shuffle" aria-label="Aleatorio"><svg viewBox="0 0 24 24"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></button>
+        <button id="btn-prev" aria-label="Anterior"><svg viewBox="0 0 24 24" class="fill"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+        <button id="btn-play" class="play playing" aria-label="Reproducir / pausar">
+          <svg class="i-pause fill" viewBox="0 0 24 24"><path d="M7 5h3v14H7zM14 5h3v14h-3z"/></svg>
+          <svg class="i-play fill" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="btn-next" aria-label="Siguiente"><svg viewBox="0 0 24 24" class="fill"><path d="M16 5h2v14h-2zM4 5l11 7L4 19z"/></svg></button>
+        <button id="btn-repeat" class="on" aria-label="Repetir"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 0 1-3 3H3"/></svg></button>
       </div>
     </div>
+    <p class="mis15"><span class="script">Mis</span><b>15</b><span class="script">años</span></p>
   </section>
 
-  <!-- 3. CUENTA REGRESIVA -->
-  <section class="countdown-section">
+  <!-- 3. TEXTO + FOTOS -->
+  <section class="story-section">
+    <p class="story-text">Hace 15 años, Dios me regaló la vida y me rodeó de amor. Hoy, con el corazón lleno de gratitud por cada bendición recibida, quiero celebrar este momento tan especial junto a las personas que forman parte de mi historia.<br><br>Por eso no puedo imaginar esta noche tan especial sin tu compañía.</p>
+    <div class="story-photos">
+      <img src="foto1.jpg" alt="Jesica" class="polaroid p1">
+      <img src="foto2.jpg" alt="Jesica" class="polaroid p2">
+    </div>
+  </section>
+
+  <!-- 4. FECHA + CUENTA REGRESIVA -->
+  <section class="date-section">
+    <p class="date-month">febrero</p>
+    <div class="date-row">
+      <span>DOMINGO</span>
+      <div class="date-day"><b>21</b><small>2027</small></div>
+      <span>21:00 HS</span>
+    </div>
     <h2 class="script big">Faltan</h2>
     <div id="countdown" class="countdown-grid">
-      <div class="time-box"><span id="days">00</span><p>Días</p></div>
-      <div class="time-box"><span id="hours">00</span><p>Horas</p></div>
-      <div class="time-box"><span id="minutes">00</span><p>Min</p></div>
-      <div class="time-box"><span id="seconds">00</span><p>Seg</p></div>
+      <div class="time-box"><span id="days">00</span><p>Días</p></div><i>:</i>
+      <div class="time-box"><span id="hours">00</span><p>Horas</p></div><i>:</i>
+      <div class="time-box"><span id="minutes">00</span><p>Minutos</p></div><i>:</i>
+      <div class="time-box"><span id="seconds">00</span><p>Segundos</p></div>
     </div>
-  </section>
-
-  <!-- 4. FOTOS + TEXTO -->
-  <section class="story-section">
-    <div class="story-photos">
-      <img src="foto1.jpg" alt="Jesica" class="photo">
-      <img src="foto2.jpg" alt="Jesica" class="photo">
-    </div>
-    <p class="story-text">Hace 15 años, Dios me regaló la vida y me rodeó de amor. Hoy, con el corazón lleno de gratitud por cada bendición recibida, quiero celebrar este momento tan especial junto a las personas que forman parte de mi historia.<br><br>Por eso no puedo imaginar esta noche tan especial sin tu compañía.</p>
-  </section>
-
-  <!-- 5. CUÁNDO -->
-  <section class="block dark">
-    <div class="icon">📅</div>
-    <h2>¿Cuándo?</h2>
-    <p class="big-line">Domingo 21 de febrero de 2027</p>
-    <p>21:00 hs</p>
   </section>
 
   <!-- 6. DÓNDE -->
@@ -123,6 +125,7 @@
     <p>Los esperamos con mucha ilusión para compartir juntos este momento único, agradeciendo a Dios por la bendición de reunirnos y celebrar la alegría de estar juntos. Será un honor contar con tu presencia. 🤍✨</p>
     <p class="script big">Jesica</p>
   </section>
+  </div>
 </main>
 
 <div id="gift-modal" class="modal-overlay hidden">
@@ -135,7 +138,6 @@
   </div>
 </div>
 
-<div class="butterflies" aria-hidden="true"></div>
-<script src="script.js"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
