@@ -29,7 +29,7 @@ window.onYouTubeIframeAPIReady = () => {
       onReady: () => { ready = true; if (wantPlay) yt.playVideo(); },
       onStateChange: e => {
         const playing = e.data === YT.PlayerState.PLAYING;
-        playBtn.textContent = playing ? '❚❚' : '▶';
+        playBtn.classList.toggle('playing', playing);
         clearInterval(ticker);
         if (playing) ticker = setInterval(() => {
           bar.value = (yt.getCurrentTime() / yt.getDuration()) * 100 || 0;
@@ -80,16 +80,3 @@ modal.onclick = e => { if (e.target === modal) modal.classList.add('hidden'); };
 $('copy-alias').onclick = async e => {
   try { await navigator.clipboard.writeText($('alias').textContent); e.target.textContent = '¡Copiado!'; } catch { }
 };
-
-/* ===== Mariposas ===== */
-if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  setInterval(() => {
-    const b = document.createElement('span');
-    b.className = 'bf'; b.textContent = '🦋';
-    b.style.left = Math.random() * 100 + 'vw';
-    b.style.setProperty('--dx', (Math.random() * 120 - 60) + 'px');
-    b.style.animationDuration = (8 + Math.random() * 6) + 's';
-    document.querySelector('.butterflies').appendChild(b);
-    setTimeout(() => b.remove(), 15000);
-  }, 2500);
-}
