@@ -102,3 +102,8 @@ body{background:linear-gradient(#dbe6f3,#e8eff8);background-attachment:fixed}
 .rsvp-card .script.big{font-size:2.2rem;line-height:1.15;color:var(--navy)}
 .closing{padding:50px 26px 70px;display:flex;flex-direction:column;gap:18px;background:#f4f7fb;font-size:.9rem}
 .closing .script.big{font-size:2.8rem;color:var(--navy)}
+
+/* ===== Fondo continuo (sin cortes entre secciones) ===== */
+.page{background:url('fondo-arriba.webp') top center/100% auto no-repeat,url('fondo-abajo.webp') bottom center/100% auto no-repeat,#f6f8fb}
+.cover,.story-section,.date-section,.center-section,.place-section,.duo,.rsvp,.closing{background:none}
+.closing{padding-bottom:150px}
