@@ -124,3 +124,11 @@ body{background:linear-gradient(#dbe6f3,#e8eff8);background-attachment:fixed}
 .polaroid{aspect-ratio:6/7;border:6px solid var(--navy);box-shadow:0 8px 18px rgba(27,54,93,.35)}
 .p1{transform:rotate(3deg);position:relative;z-index:1}
 .p2{transform:rotate(-3deg);margin:-14px 0 0 0;position:relative;z-index:2}
+
+/* Nombre y "Mis 15 años" como imágenes */
+.cover{padding-top:90px;gap:0}
+.cover-name{background:none;-webkit-background-clip:border-box;background-clip:border-box;filter:none;padding:0;width:100%;display:flex;justify-content:center;margin-top:6px}
+.cover-name img{width:min(88%,380px);height:auto;display:block}
+.mis15{margin-top:8px}
+.mis15 img{width:min(86%,360px);height:auto;display:block;margin:0 auto}
+.cover-name{margin-bottom:12px}
