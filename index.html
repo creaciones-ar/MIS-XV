@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mis XV - Jesica</title>
-<!-- VERSION 3 -->
-<link rel="stylesheet" href="styles.css?v=14">
+<link rel="stylesheet" href="styles.css?v=15">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -26,7 +25,6 @@
 <div id="yt-player"></div>
 
 <main id="main-content" class="hidden">
-
   <div class="page">
 
   <!-- 2. PORTADA -->
@@ -49,12 +47,12 @@
     <p class="mis15"><img src="mis15.png" alt="Mis 15 años"></p>
   </section>
 
-  <!-- 3. TEXTO + FOTOS -->
+  <!-- 3. TEXTO + FOTOS (fotos con marco hecho en Canva) -->
   <section class="story-section">
     <p class="story-text">Hace 15 años, Dios me regaló la vida y me rodeó de amor. Hoy, con el corazón lleno de gratitud por cada bendición recibida, quiero celebrar este momento tan especial junto a las personas que forman parte de mi historia.<br>Por eso no puedo imaginar esta noche tan especial sin tu compañía.</p>
     <div class="story-photos">
-      <img src="foto 1.png" data-fb="foto1.jpg" alt="Jesica" class="polaroid framed p1" onerror="this.onerror=null;this.src=this.dataset.fb;this.classList.remove('framed')">
-      <img src="foto 2.png" data-fb="foto2.jpg" alt="Jesica" class="polaroid framed p2" onerror="this.onerror=null;this.src=this.dataset.fb;this.classList.remove('framed')">
+      <img src="foto1.png" data-foto="1" data-framed alt="Jesica" class="polaroid p1">
+      <img src="foto2.png" data-foto="2" data-framed alt="Jesica" class="polaroid p2">
     </div>
   </section>
 
@@ -76,9 +74,9 @@
     </div>
   </section>
 
-  <!-- 5. LUGAR -->
+  <!-- 5. LUGAR (foto con borde irregular, sin marco) -->
   <section class="place-section">
-    <img src="foto3.jpg" alt="Jesica" class="place-photo">
+    <img src="foto3.png" data-foto="3" alt="Jesica" class="place-photo">
     <div class="place-info">
       <svg class="ico" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
       <h2 class="script big">Lugar del evento</h2>
@@ -113,8 +111,8 @@
   <!-- 8. FOTOS -->
   <section class="duo">
     <img src="deco-petalos-suaves.webp" alt="" class="deco deco-duo" aria-hidden="true">
-    <img src="foto 4.png" data-fb="foto4.jpg" alt="Jesica" class="polaroid framed d1" onerror="this.onerror=null;this.src=this.dataset.fb;this.classList.remove('framed')">
-    <img src="foto 5.png" data-fb="foto5.jpg" alt="Jesica" class="polaroid framed d2" onerror="this.onerror=null;this.src=this.dataset.fb;this.classList.remove('framed')">
+    <img src="foto4.png" data-foto="4" data-framed alt="Jesica" class="polaroid d1">
+    <img src="foto5.png" data-foto="5" data-framed alt="Jesica" class="polaroid d2">
   </section>
 
   <!-- 9. ÁLBUM + QR -->
@@ -142,9 +140,10 @@
     <p>Los esperamos con mucha ilusión para compartir juntos este momento único, agradeciendo a Dios por la bendición de reunirnos y celebrar la alegría de estar juntos. Será un honor contar con tu presencia. 🤍✨</p>
     <p class="script big">Jesica</p>
   </section>
+
   </div>
 </main>
 
-<script src="script.js?v=14"></script>
+<script src="script.js?v=15"></script>
 </body>
 </html>
