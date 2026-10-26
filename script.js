@@ -3,8 +3,8 @@ const CONFIG = {
   fecha: "February 21, 2027 21:00:00",
   youtubeId: "rtOvBOTyX00",
   whatsapp: "5491178501814", // 54 + 9 + número
-  albumUrl: "https://drive.google.com/drive/folders/1aR18evvePSL7YZyk-2w8G72YuVc6yGQu?usp=drive_link", // carpeta compartida de Drive
-  mensajeWa: "Hola! Confirmo mi asistencia a los XV de Jesica"
+  albumUrl: "https://drive.google.com/drive/folders/PEGAR-LINK-ACA", // carpeta compartida de Drive
+  mensajeWa: "Hola! Confirmo mi asistencia a los XV de Jesica 🦋"
 };
 
 const $ = id => document.getElementById(id);
@@ -47,18 +47,21 @@ $('btn-repeat').onclick = e => e.currentTarget.classList.toggle('on');
 $('btn-shuffle').onclick = e => e.currentTarget.classList.toggle('on');
 $('yt-player').style.cssText = 'position:fixed;left:-9999px;width:1px;height:1px';
 
-/* ===== Abrir sobre ===== */
+/* ===== Abrir sobre: tocar el sello -> se rompe, se abre la solapa, sube la carta, entra la invitación ===== */
 $('open-btn').addEventListener('click', function () {
-  this.classList.add('open');
-  wantPlay = true; if (ready) yt.playVideo();
+  const env = $('envelope'), screen = $('welcome-screen');
+  if (env.classList.contains('open')) return;      // evita doble toque
+  env.classList.add('open');
+  screen.classList.add('opening');
+  wantPlay = true; if (ready) yt.playVideo();      // la música arranca con el toque
   setTimeout(() => {
-    $('welcome-screen').style.opacity = '0';
+    screen.style.opacity = '0';
     setTimeout(() => {
-      $('welcome-screen').classList.add('hidden');
+      screen.classList.add('hidden');
       $('main-content').classList.remove('hidden');
       window.scrollTo(0, 0);
     }, 600);
-  }, 600);
+  }, 2900);                                         // tiempo que dura la animación del sobre
 });
 
 /* ===== Cuenta regresiva ===== */
