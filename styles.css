@@ -132,3 +132,13 @@ body{background:linear-gradient(#dbe6f3,#e8eff8);background-attachment:fixed}
 .mis15{margin-top:8px}
 .mis15 img{width:min(86%,360px);height:auto;display:block;margin:0 auto}
 .cover-name{margin-bottom:12px}
+
+/* Decoraciones sueltas en el medio de la invitación */
+.date-section,.center-section,.duo{position:relative}
+.deco{position:absolute;height:auto;pointer-events:none;z-index:0}
+.date-section>*:not(.deco),.center-section>*:not(.deco){position:relative;z-index:1}
+.deco-date{left:-26px;top:90px;width:92px}
+.deco-dress{right:-44px;top:-26px;width:150px}
+.deco-regalo{left:-48px;top:-46px;width:110px}
+.deco-duo{right:-30px;top:-10px;width:300px}
+.deco-qr{left:-46px;bottom:-14px;width:190px}
