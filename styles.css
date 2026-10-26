@@ -116,3 +116,11 @@ body{background:linear-gradient(#dbe6f3,#e8eff8);background-attachment:fixed}
 .cover{padding-top:96px}
 .tiara{width:min(40%,190px);margin:0 auto 2px}
 .cover-name{width:100%;text-align:center;padding:0 .12em}
+
+/* Texto + fotos proporcionados (marco parejo, fotos superpuestas) */
+.story-section{align-items:center;gap:18px;padding:30px 20px 40px 18px}
+.story-text{flex:1 1 56%;text-align:center;font-size:1.2rem;line-height:1.55}
+.story-photos{flex:0 0 42%;gap:0}
+.polaroid{aspect-ratio:6/7;border:6px solid var(--navy);box-shadow:0 8px 18px rgba(27,54,93,.35)}
+.p1{transform:rotate(3deg);position:relative;z-index:1}
+.p2{transform:rotate(-3deg);margin:-14px 0 0 0;position:relative;z-index:2}
