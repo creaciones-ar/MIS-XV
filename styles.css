@@ -3,7 +3,8 @@
   --navy:#1b365d;--blue:#4a90c8;--sky:#dbe9f7;--ice:#f4f8fc;--silver:#8d9aae;
   --base:#f6f8fb;
   --col:min(100vw,480px);          /* ancho real de la columna */
-  --sec-y:40px;                    /* espacio vertical de cada sección (tocá solo este número) */
+  --sec-y:40px;      /* espacio vertical de cada sección */
+  --respiro:150px;   /* alto de cada separación con degradé */
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;line-height:1.6;background:linear-gradient(#dbe6f3,#e8eff8) fixed}
@@ -49,10 +50,19 @@ body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;lin
 }
 .cover,.story-section,.date-section,.center-section,.place-section,.duo,.rsvp,.closing{background:none}
 
-/* ===== Separador entre secciones ===== */
-.divider{position:relative;width:150px;height:14px;margin:0 auto}
-.divider::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent,var(--silver),transparent)}
-.divider::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;transform:translate(-50%,-50%) rotate(45deg);background:var(--base);border:1px solid var(--silver)}
+/* ===== Respiro entre secciones: aire + degradé de acuarela (sin líneas) =====
+   Para más o menos espacio cambiá --respiro. Para que se note menos/más la acuarela, cambiá opacity. */
+.respiro{position:relative;height:var(--respiro);margin:-20px 0;pointer-events:none}
+.respiro::before{
+  content:"";position:absolute;inset:0;
+  background:url('fondo-mariposas.jpg') center/cover no-repeat;
+  opacity:.9;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 38%,#000 62%,transparent 100%);
+          mask-image:linear-gradient(to bottom,transparent 0,#000 38%,#000 62%,transparent 100%);
+}
+/* alternan para que no se repita siempre el mismo recorte */
+.respiro:nth-of-type(even)::before{background-position:center 15%;transform:scaleX(-1)}
+.respiro:nth-of-type(3n)::before{background-position:center 85%}
 
 /* ===== Portada ===== */
 .cover{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:0;padding:90px 24px 6px}
