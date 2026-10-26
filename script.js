@@ -78,7 +78,7 @@ $('copy-alias').onclick = async e => {
 };
 
 /* ===== Fotos: si una no carga, prueba otras extensiones (.jpeg, .JPG, .png...) ===== */
-document.querySelectorAll('img[src^="foto"]').forEach(img => {
+document.querySelectorAll('img[src^="foto"]:not([data-fb])').forEach(img => {
   const base = img.getAttribute('src').replace(/\.\w+$/, '');
   const exts = ['jpeg', 'JPG', 'JPEG', 'png', 'PNG', 'webp'];
   let i = 0;
