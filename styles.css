@@ -76,8 +76,8 @@ body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;lin
 .time-box p{font-size:.55rem;letter-spacing:1.5px;text-transform:uppercase}
 
 /* ===== Secciones interiores ===== */
-.ico-gif{width:64px!important;height:64px!important;max-width:64px;object-fit:contain;display:block;margin:0 auto 6px;background:none}
-.place-info .ico-gif{width:56px!important;height:56px!important;max-width:56px}
+.ico-gif{height:80px!important;width:auto!important;max-width:70%;object-fit:contain;display:block;margin:0 auto 6px;background:none}
+.place-info .ico-gif{height:68px!important;max-width:90%}
 .ico{width:46px;height:46px;fill:none;stroke:var(--navy);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:8px}
 .center-section{position:relative;padding:60px 22px 30px;display:flex;flex-direction:column;align-items:center;gap:10px}
 .center-section .script.big{font-size:2.3rem;color:var(--navy)}
