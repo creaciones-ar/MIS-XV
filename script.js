@@ -4,7 +4,7 @@ const CONFIG = {
   youtubeId: "rtOvBOTyX00",
   whatsapp: "5491178501814", // 54 + 9 + número
   albumUrl: "https://drive.google.com/drive/folders/1aR18evvePSL7YZyk-2w8G72YuVc6yGQu", // carpeta compartida de Drive
-  mensajeWa: "Hola! Confirmo mi asistencia a los XV de Jesica"
+  mensajeWa: "Hola! Confirmo mi asistencia a los XV de Jesica 💙"
 };
 
 const $ = id => document.getElementById(id);
