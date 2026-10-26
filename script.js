@@ -11,8 +11,23 @@ const $ = id => document.getElementById(id);
 
 /* ===== Links, QR ===== */
 $('album-link').href = CONFIG.albumUrl;
-$('qr').src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data=' + encodeURIComponent(CONFIG.albumUrl);
 $('wa-btn').href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(CONFIG.mensajeWa)}`;
+
+/* El QR se genera en el propio celular (no depende de ningún servicio externo).
+   Si por alguna razón la librería no carga, usa el servicio online como respaldo. */
+(function makeQR() {
+  const img = $('qr');
+  try {
+    const qr = qrcode(0, 'M');           // 'M' = corrección de errores media
+    qr.addData(CONFIG.albumUrl);
+    qr.make();
+    img.src = qr.createDataURL(8, 0);    // 8 = tamaño de cada cuadradito, 0 = sin margen (el marco blanco ya lo da el CSS)
+    img.style.imageRendering = 'pixelated';
+  } catch (err) {
+    console.warn('QR local falló, uso servicio online', err);
+    img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data=' + encodeURIComponent(CONFIG.albumUrl);
+  }
+})();
 
 /* ===== Música (YouTube oculto + reproductor propio) ===== */
 let yt, ticker, ready = false, wantPlay = false;
