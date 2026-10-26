@@ -3,7 +3,7 @@ const CONFIG = {
   fecha: "February 21, 2027 21:00:00",
   youtubeId: "rtOvBOTyX00",
   whatsapp: "5491178501814", // 54 + 9 + número
-  albumUrl: "https://photos.google.com/share/AF1QipORKJRqd1zcTmrwalPMo1DOiqiCBS3nj7Bn3ekHn_AxPToqqS1a8-uk8kd5uCbwng?key=M1ZyaGh5R2hkSURxMERlR0ZVOVk5LWk5YWxYYmNn", // carpeta compartida de Drive
+  albumUrl: "https://photos.app.goo.gl/3djeaMs4fKYMmVkM6", // carpeta compartida de Drive
   mensajeWa: "Hola! Confirmo mi asistencia a los XV de Jesica 💙"
 };
 
