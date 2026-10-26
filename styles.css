@@ -143,3 +143,10 @@ body{background:linear-gradient(#dbe6f3,#e8eff8);background-attachment:fixed}
 .deco-duo{right:-30px;top:-10px;width:300px}
 .deco-qr{left:-46px;bottom:-14px;width:190px}
 .deco-qr{left:-40px;bottom:-6px;width:150px;transform:scaleX(-1)}
+
+/* Fotos que ya traen su marco (hechas en Canva): sin borde ni giro propio */
+.polaroid.framed{border:0;background:none;box-shadow:none;aspect-ratio:auto;object-fit:contain;transform:none;filter:drop-shadow(0 8px 14px rgba(27,54,93,.28))}
+.story-photos .polaroid.framed.p2{margin-top:-6px}
+.duo .polaroid.framed{width:62%}
+.duo .d1.framed{left:2%;top:20px}
+.duo .d2.framed{right:2%;top:250px}
