@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mis XV - Jesica</title>
-<link rel="stylesheet" href="styles.css?v=18">
+<link rel="stylesheet" href="styles.css?v=20">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,10 +15,19 @@
   <div class="welcome-content">
     <h1 class="neon">Jesica</h1>
     <p class="welcome-sub">Mis quince años</p>
-    <button id="open-btn" class="envelope-btn" aria-label="Abrir invitación">
-      <img src="sobre-bienvenida.png?v=3" alt="Sobre de invitación" class="envelope-img">
-    </button>
-    <p class="welcome-hint">Presiona el sobre para abrirlo</p>
+    <div id="envelope" class="envelope">
+      <div class="env-back"></div>
+      <div class="env-letter">
+        <span class="letter-small">Mis quince años</span>
+        <span class="letter-name script">Jesica</span>
+        <span class="letter-line"></span>
+        <span class="letter-small">Te invito a celebrar</span>
+      </div>
+      <div class="env-l"></div><div class="env-r"></div><div class="env-b"></div>
+      <div class="env-flap"></div>
+      <button id="open-btn" class="seal" aria-label="Abrir invitación"><span class="script">J</span></button>
+    </div>
+    <p class="welcome-hint">Toca el sello para abrir</p>
   </div>
 </div>
 
@@ -156,6 +165,6 @@
   </div>
 </main>
 
-<script src="script.js?v=15"></script>
+<script src="script.js?v=16"></script>
 </body>
 </html>
