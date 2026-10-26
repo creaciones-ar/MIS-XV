@@ -142,3 +142,4 @@ body{background:linear-gradient(#dbe6f3,#e8eff8);background-attachment:fixed}
 .deco-regalo{left:-48px;top:-46px;width:110px}
 .deco-duo{right:-30px;top:-10px;width:300px}
 .deco-qr{left:-46px;bottom:-14px;width:190px}
+.deco-qr{left:-40px;bottom:-6px;width:150px;transform:scaleX(-1)}
