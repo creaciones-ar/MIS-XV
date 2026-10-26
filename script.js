@@ -7,14 +7,15 @@ const CONFIG = {
   mensajeWa: "Hola! Confirmo mi asistencia a los XV de Jesica 🦋"
 };
 
+const $ = id => document.getElementById(id);
+
 /* ===== Links, QR ===== */
-document.getElementById('album-link').href = CONFIG.albumUrl;
-document.getElementById('qr').src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data=' + encodeURIComponent(CONFIG.albumUrl);
-document.getElementById('wa-btn').href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(CONFIG.mensajeWa)}`;
+$('album-link').href = CONFIG.albumUrl;
+$('qr').src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data=' + encodeURIComponent(CONFIG.albumUrl);
+$('wa-btn').href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(CONFIG.mensajeWa)}`;
 
 /* ===== Música (YouTube oculto + reproductor propio) ===== */
 let yt, ticker, ready = false, wantPlay = false;
-const $ = id => document.getElementById(id);
 const playBtn = $('btn-play'), bar = $('progress');
 
 const tag = document.createElement('script');
@@ -63,26 +64,58 @@ $('open-btn').addEventListener('click', function () {
 /* ===== Cuenta regresiva ===== */
 const eventDate = new Date(CONFIG.fecha).getTime();
 const pad = n => String(n).padStart(2, '0');
-const timer = setInterval(() => {
+const tick = () => {
   const d = eventDate - Date.now();
   if (d < 0) { clearInterval(timer); $('countdown').textContent = '¡Llegó el gran día!'; return; }
   $('days').textContent = pad(Math.floor(d / 864e5));
   $('hours').textContent = pad(Math.floor(d % 864e5 / 36e5));
   $('minutes').textContent = pad(Math.floor(d % 36e5 / 6e4));
   $('seconds').textContent = pad(Math.floor(d % 6e4 / 1e3));
-}, 1000);
+};
+const timer = setInterval(tick, 1000);
+tick();
 
-/* ===== Modal regalos ===== */
+/* ===== Copiar alias ===== */
 $('copy-alias').onclick = async e => {
-  try { await navigator.clipboard.writeText($('alias').textContent); e.target.textContent = '¡Copiado!'; } catch { }
+  const btn = e.currentTarget, txt = $('alias').textContent.trim();
+  try {
+    await navigator.clipboard.writeText(txt);
+  } catch {
+    const t = document.createElement('textarea');
+    t.value = txt; document.body.appendChild(t); t.select();
+    try { document.execCommand('copy'); } catch { }
+    t.remove();
+  }
+  btn.textContent = '¡Copiado!';
+  setTimeout(() => btn.textContent = 'Copiar alias', 2000);
 };
 
-/* ===== Fotos: si una no carga, prueba otras extensiones (.jpeg, .JPG, .png...) ===== */
-document.querySelectorAll('img[src^="foto"]:not([data-fb])').forEach(img => {
-  const base = img.getAttribute('src').replace(/\.\w+$/, '');
-  const exts = ['jpeg', 'JPG', 'JPEG', 'png', 'PNG', 'webp'];
+/* ===== Fotos: busca automáticamente el archivo correcto =====
+   Prueba: foto3.png, "foto 3.png", foto_3.png, .jpg, .jpeg, .webp (y mayúsculas).
+   Las que tienen data-framed (marco de Canva) reciben la clase "framed". */
+const V = '15';
+const NAMES = n => [`foto${n}`, `foto ${n}`, `foto_${n}`];
+const EXTS = ['png', 'jpg', 'jpeg', 'webp', 'PNG', 'JPG', 'JPEG'];
+
+function candidates(n) {
+  const list = [];
+  NAMES(n).forEach(name => EXTS.forEach(ext => list.push(encodeURI(`${name}.${ext}`) + '?v=' + V)));
+  return list;
+}
+
+function loadPhoto(img) {
+  const list = candidates(img.dataset.foto);
+  const framed = img.hasAttribute('data-framed');
   let i = 0;
-  const retry = () => { if (i < exts.length) img.src = base + '.' + exts[i++]; };
-  img.addEventListener('error', retry);
-  if (img.complete && img.naturalWidth === 0) retry();
-});
+  const next = () => {
+    if (i >= list.length) { console.warn('No se encontró la foto', img.dataset.foto); return; }
+    const probe = new Image();
+    const url = list[i++];
+    probe.onload = () => { img.src = url; if (framed) img.classList.add('framed'); };
+    probe.onerror = next;
+    probe.src = url;
+  };
+  next();
+}
+
+document.querySelectorAll('img[data-foto]').forEach(loadPhoto);
