@@ -132,9 +132,9 @@ body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;lin
 .swatches i{width:36px;height:36px;border-radius:50%;box-shadow:0 2px 6px rgba(27,54,93,.25),inset 0 0 0 1px rgba(27,54,93,.12)}
 .sw-white{background:#fff}.sw-silver{background:linear-gradient(135deg,#f1f3f7,#8d9aae 55%,#d5dae3)}.sw-blue{background:#1c4aa0}
 .alias{font-size:1.15rem;font-weight:600;letter-spacing:.12em}
-.btn{display:inline-block;margin-top:12px;padding:12px 30px;border-radius:25px;font:600 .72rem 'Montserrat';letter-spacing:.15em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.3s}
+.btn{display:inline-block;min-width:170px;margin-top:12px;padding:12px 30px;border-radius:25px;font:600 .72rem/1.6 'Montserrat';letter-spacing:.15em;text-align:center;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.3s;-webkit-appearance:none;appearance:none}
 .btn.solid{background:var(--navy);color:#fff;border:1.5px solid var(--navy)}
-.btn.outline{background:none;color:var(--navy);border:1.5px solid var(--navy)}
+.btn.outline{background:var(--navy);color:#fff;border:1.5px solid var(--navy)} /* igual que .solid: todos los botones son iguales */
 .btn:hover{opacity:.85}
 .qr{background:#fff;padding:10px;border:1.5px solid var(--navy);border-radius:12px;margin-top:6px}
 
