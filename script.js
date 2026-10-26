@@ -59,6 +59,7 @@ $('open-btn').addEventListener('click', function () {
     setTimeout(() => {
       screen.classList.add('hidden');
       $('main-content').classList.remove('hidden');
+      fitStory();
       window.scrollTo(0, 0);
     }, 600);
   }, 2900);                                         // tiempo que dura la animación del sobre
@@ -122,3 +123,24 @@ function loadPhoto(img) {
 }
 
 document.querySelectorAll('img[data-foto]').forEach(loadPhoto);
+
+
+/* ===== Texto de la historia: mismo alto que las dos fotos =====
+   Ajusta el tamaño de letra hasta que el texto empiece a la altura de la 1ª foto
+   y termine a la altura de la 2ª (en cualquier celular). */
+function fitStory() {
+  const t = document.querySelector('.story-text');
+  const box = document.querySelector('.story-photos');
+  if (!t || !box || !box.offsetHeight) return;      // todavía oculto o sin cargar
+  const target = box.offsetHeight * 0.90;           // 0.90 = descuenta el borde transparente de los marcos
+  let lo = 11, hi = 24;
+  for (let i = 0; i < 12; i++) {
+    const mid = (lo + hi) / 2;
+    t.style.fontSize = mid + 'px';
+    if (t.scrollHeight > target) hi = mid; else lo = mid;
+  }
+  t.style.fontSize = lo + 'px';
+}
+document.querySelectorAll('.story-photos img').forEach(i => i.addEventListener('load', fitStory));
+window.addEventListener('resize', fitStory);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitStory);
