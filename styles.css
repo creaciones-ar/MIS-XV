@@ -2,6 +2,7 @@
 :root{
   --navy:#1b365d;--blue:#4a90c8;--sky:#dbe9f7;--ice:#f4f8fc;--silver:#8d9aae;
   --base:#f6f8fb;
+  --frame:#213966;   /* color exacto de los marcos de las fotos (también de los botones) */
   --col:min(100vw,480px);          /* ancho real de la columna */
   --sec-y:40px;      /* espacio vertical de cada sección */
   --respiro:150px;   /* alto de cada separación con degradé */
@@ -119,8 +120,8 @@ body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;lin
 
 /* ===== Texto + fotos ===== */
 .story-section{display:flex;align-items:center;gap:6px;padding:var(--sec-y) 4px var(--sec-y) 18px}
-.story-text{flex:1 1 0;min-width:0;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:1.3rem;line-height:1.6;color:var(--navy)}
-.story-photos{flex:0 0 47%;display:flex;flex-direction:column;align-items:flex-end}
+.story-text{flex:1 1 0;min-width:0;align-self:center;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:1.15rem;line-height:1.55;color:var(--navy)} /* el tamaño real lo calcula script.js para que el texto mida lo mismo que las fotos */
+.story-photos{flex:0 0 53%;display:flex;flex-direction:column;align-items:flex-end}
 
 .polaroid{display:block;width:100%;height:auto;border:6px solid var(--navy);box-shadow:0 8px 18px rgba(27,54,93,.35)}
 .p1{transform:rotate(3deg);position:relative;z-index:1}
@@ -163,8 +164,8 @@ body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;lin
 .sw-white{background:#fff}.sw-silver{background:linear-gradient(135deg,#f1f3f7,#8d9aae 55%,#d5dae3)}.sw-blue{background:#1c4aa0}
 .alias{font-size:1.15rem;font-weight:600;letter-spacing:.12em}
 .btn{display:inline-block;min-width:170px;margin-top:12px;padding:12px 30px;border-radius:25px;font:600 .72rem/1.6 'Montserrat';letter-spacing:.15em;text-align:center;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.3s;-webkit-appearance:none;appearance:none}
-.btn.solid{background:var(--navy);color:#fff;border:1.5px solid var(--navy)}
-.btn.outline{background:var(--navy);color:#fff;border:1.5px solid var(--navy)} /* igual que .solid: todos los botones son iguales */
+.btn.solid{background:var(--frame);color:#fff;border:1.5px solid var(--frame)}
+.btn.outline{background:var(--frame);color:#fff;border:1.5px solid var(--frame)} /* igual que .solid: todos los botones son iguales */
 .btn:hover{opacity:.85}
 .qr{background:#fff;padding:10px;border:1.5px solid var(--navy);border-radius:12px;margin-top:6px}
 
