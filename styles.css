@@ -46,9 +46,9 @@ body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;lin
 .mis15 img{width:min(86%,360px);height:auto;display:block;margin:0 auto}
 
 /* ===== Texto + fotos ===== */
-.story-section{display:flex;align-items:center;gap:14px;padding:30px 18px 40px}
-.story-text{flex:1 1 54%;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:1.2rem;line-height:1.55;color:var(--navy)}
-.story-photos{flex:0 0 44%;display:flex;flex-direction:column}
+.story-section{display:flex;align-items:center;gap:6px;padding:40px 4px 50px 18px}
+.story-text{flex:1 1 0;min-width:0;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:1.3rem;line-height:1.6;color:var(--navy)}
+.story-photos{flex:0 0 47%;display:flex;flex-direction:column;align-items:flex-end}
 
 /* Foto sin marco propio (por si algún día usás una foto común) */
 .polaroid{display:block;width:100%;height:auto;border:6px solid var(--navy);box-shadow:0 8px 18px rgba(27,54,93,.35)}
@@ -57,7 +57,8 @@ body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;lin
 
 /* Foto con marco ya hecho en Canva (PNG transparente, ya viene inclinada) */
 .polaroid.framed{border:0;background:none;box-shadow:none;transform:none;filter:drop-shadow(0 8px 14px rgba(27,54,93,.28))}
-.story-photos .polaroid.framed.p2{margin-top:-18px}
+.story-photos .polaroid.framed.p1{transform:translateX(4px);position:relative;z-index:1}
+.story-photos .polaroid.framed.p2{margin-top:-34px;transform:translateX(-8px);position:relative;z-index:2}
 
 /* ===== Fecha + cuenta regresiva ===== */
 .date-section{position:relative;padding:50px 20px 60px}
