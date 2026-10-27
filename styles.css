@@ -1,4 +1,4 @@
-/* VERSION 7 - sobre con destellos y bordes, sello con J legible */
+/* VERSION 8 - Priscila, playlist, frase final más grande */
 :root{
   --navy:#1b365d;--blue:#4a90c8;--sky:#dbe9f7;--ice:#f4f8fc;--silver:#8d9aae;
   --base:#f6f8fb;
@@ -219,7 +219,7 @@ body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;lin
 }
 .rsvp-card{width:100%;background:rgba(255,255,255,.6);border-radius:10px;padding:34px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;backdrop-filter:blur(2px)}
 .rsvp-card .script.big{font-size:2.2rem;line-height:1.15;color:var(--navy)}
-.closing{padding:30px 26px 150px;display:flex;flex-direction:column;gap:18px;font-size:.9rem}
+.closing{padding:30px 26px 150px;display:flex;flex-direction:column;gap:18px;font-size:1.12rem;line-height:1.7}
 .closing .script.big{font-size:2.8rem;color:var(--navy)}
 
 /* ===== Decoraciones sueltas ===== */
@@ -230,3 +230,8 @@ body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;lin
 .deco-regalo{left:-48px;top:-46px;width:110px}
 .deco-duo{right:-30px;top:-10px;width:300px}
 .deco-qr{left:-40px;bottom:-6px;width:150px;transform:scaleX(-1)}
+
+/* ===== Sugerencia de canción ===== */
+.song-input{width:100%;max-width:300px;margin-top:6px;padding:12px 18px;border:1.5px solid var(--frame);border-radius:25px;background:rgba(255,255,255,.85);font:400 16px 'Montserrat',sans-serif;color:var(--navy);text-align:center;outline:none}
+.song-input::placeholder{color:#7d8da6}
+.song-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(74,144,200,.2)}
