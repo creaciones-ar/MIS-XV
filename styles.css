@@ -75,6 +75,7 @@ body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;lin
 .envelope.open .env-letter{transform:translateY(-52%)}
 .envelope.open .env-orn::before,.envelope.open .orn-tl,.envelope.open .orn-tr{opacity:0}
 #welcome-screen.opening .neon,#welcome-screen.opening .welcome-sub,#welcome-screen.opening .welcome-hint{opacity:0;transition:opacity .6s}
+#welcome-screen.opening .welcome-hint{animation:none;opacity:0;transition:opacity .25s}
 #welcome-screen.opening .envelope{transition:transform 1s ease 1.4s;transform:translateY(40px)}
 .welcome-hint{color:#fff;font-size:.8rem;letter-spacing:3px;text-shadow:0 0 10px rgba(20,50,100,.9);animation:pulse 2s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-8px)}}
