@@ -4,7 +4,7 @@ const CONFIG = {
   youtubeId: "rtOvBOTyX00",
   whatsapp: "5491178501814", // 54 + 9 + número
   albumUrl: "https://photos.app.goo.gl/3djeaMs4fKYMmVkM6", // álbum compartido
-  playlistUrl: "https://www.youtube.com/playlist?list=PLN7lAW3DX79Y&jct=P2rJ4GAOFVDsVerkdWr6AQ", // LINK DE INVITACIÓN de la playlist colaborativa de YouTube (pegalo entre las comillas). Si queda vacío, la sección "Nuestra playlist" no aparece.
+  playlistUrl: "https://open.spotify.com/playlist/17ImBOYgtzpeEXi9pUZCVB?si=a82aff2bb5e74a3d&pt=c025a53596e428cbcf60fa0736f2c24d", // LINK DE INVITACIÓN de la playlist colaborativa de Spotify (pegalo entre las comillas). Si queda vacío, la sección "Nuestra playlist" no aparece.
   mensajeWa: "Hola! Confirmo mi asistencia a los XV de Priscila 💙"
 };
 
