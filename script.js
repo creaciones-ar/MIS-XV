@@ -3,10 +3,9 @@ const CONFIG = {
   fecha: "February 21, 2027 21:00:00",
   youtubeId: "rtOvBOTyX00",
   whatsapp: "5491178501814", // 54 + 9 + número
-  albumUrl: "https://photos.app.goo.gl/GriDHPSV9NEhcxSk6", // álbum compartido
-  playlistUrl: "", // OPCIONAL: link de una playlist colaborativa (Spotify / YouTube Music). Si lo dejás vacío, el botón "Ver playlist" no aparece.
-  mensajeWa: "Hola! Confirmo mi asistencia a los XV de Priscila 💙",
-  mensajeCancion: "Hola! Te sugiero este tema para la fiesta de Priscila 🎶: "
+  albumUrl: "https://photos.app.goo.gl/3djeaMs4fKYMmVkM6", // álbum compartido
+  playlistUrl: "https://www.youtube.com/playlist?list=PLN7lAW3DX79Y&jct=P2rJ4GAOFVDsVerkdWr6AQ", // LINK DE INVITACIÓN de la playlist colaborativa de YouTube (pegalo entre las comillas). Si queda vacío, la sección "Nuestra playlist" no aparece.
+  mensajeWa: "Hola! Confirmo mi asistencia a los XV de Priscila 💙"
 };
 
 const $ = id => document.getElementById(id);
@@ -31,22 +30,12 @@ $('wa-btn').href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(C
   }
 })();
 
-/* ===== Sugerencia de canción: abre WhatsApp con el mensaje armado ===== */
-(function songSuggest() {
-  const input = $('song'), btn = $('song-btn');
-  btn.addEventListener('click', () => {
-    const s = input.value.trim();
-    if (!s) { input.focus(); return; }
-    window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(CONFIG.mensajeCancion + s)}`, '_blank');
-    input.value = '';
-  });
-  input.addEventListener('keydown', e => { if (e.key === 'Enter') btn.click(); });
-  if (CONFIG.playlistUrl) {
-    const a = $('playlist-link');
-    a.href = CONFIG.playlistUrl;
-    a.classList.remove('hidden');
-  }
-})();
+/* ===== Playlist colaborativa: la sección solo aparece si hay link en playlistUrl ===== */
+if (CONFIG.playlistUrl) {
+  $('playlist-link').href = CONFIG.playlistUrl;
+  $('playlist-section').classList.remove('hidden');
+  $('playlist-respiro').classList.remove('hidden');
+}
 
 /* ===== Música (YouTube oculto + reproductor propio) ===== */
 let yt, ticker, ready = false, wantPlay = false;
