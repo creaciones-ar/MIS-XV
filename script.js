@@ -3,7 +3,7 @@ const CONFIG = {
   fecha: "February 21, 2027 21:00:00",
   youtubeId: "rtOvBOTyX00",
   whatsapp: "5491178501814", // 54 + 9 + número
-  albumUrl: "https://photos.app.goo.gl/3djeaMs4fKYMmVkM6", // álbum compartido
+  albumUrl: "https://photos.app.goo.gl/GriDHPSV9NEhcxSk6", // álbum compartido
   playlistUrl: "", // OPCIONAL: link de una playlist colaborativa (Spotify / YouTube Music). Si lo dejás vacío, el botón "Ver playlist" no aparece.
   mensajeWa: "Hola! Confirmo mi asistencia a los XV de Priscila 💙",
   mensajeCancion: "Hola! Te sugiero este tema para la fiesta de Priscila 🎶: "
