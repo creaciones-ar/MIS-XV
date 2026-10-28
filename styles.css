@@ -1,4 +1,4 @@
-/* VERSION 8 - Priscila, playlist, frase final más grande */
+/* VERSION 9 - botones centrados y más grandes | VERSION 8 - Priscila, playlist, frase final más grande */
 :root{
   --navy:#1b365d;--blue:#4a90c8;--sky:#dbe9f7;--ice:#f4f8fc;--silver:#8d9aae;
   --base:#f6f8fb;
@@ -187,7 +187,7 @@ body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;lin
 .swatches i{width:36px;height:36px;border-radius:50%;box-shadow:0 2px 6px rgba(27,54,93,.25),inset 0 0 0 1px rgba(27,54,93,.12)}
 .sw-white{background:#fff}.sw-silver{background:linear-gradient(135deg,#f1f3f7,#8d9aae 55%,#d5dae3)}.sw-blue{background:#1c4aa0}
 .alias{font-size:1.15rem;font-weight:600;letter-spacing:.12em}
-.btn{display:inline-block;min-width:170px;margin-top:12px;padding:12px 30px;border-radius:25px;font:600 .72rem/1.6 'Montserrat';letter-spacing:.15em;text-align:center;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.3s;-webkit-appearance:none;appearance:none}
+.btn{display:inline-block;min-width:184px;margin-top:12px;padding:15px 30px 9px calc(30px + .15em);border-radius:25px;font:600 .82rem/1.6 'Montserrat';letter-spacing:.15em;text-align:center;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.3s;-webkit-appearance:none;appearance:none} /* el padding de arriba/abajo y el extra a la izquierda compensan el espacio que deja el letter-spacing, para que el texto quede bien centrado */
 .btn.solid{background:var(--frame);color:#fff;border:1.5px solid var(--frame)}
 .btn.outline{background:var(--frame);color:#fff;border:1.5px solid var(--frame)} /* igual que .solid: todos los botones son iguales */
 .btn:hover{opacity:.85}
@@ -237,3 +237,8 @@ body{font-family:'Montserrat',sans-serif;color:var(--navy);text-align:center;lin
 .song-input{width:100%;max-width:300px;margin-top:6px;padding:12px 18px;border:1.5px solid var(--frame);border-radius:25px;background:rgba(255,255,255,.85);font:400 16px 'Montserrat',sans-serif;color:var(--navy);text-align:center;outline:none}
 .song-input::placeholder{color:#7d8da6}
 .song-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(74,144,200,.2)}
+
+/* ===== Aviso "Confirmar antes del 1 de febrero": flota y titila como "Toca el sello para abrir" ===== */
+.rsvp-card .note{opacity:1;animation:noteFloat 2.4s ease-in-out infinite}
+@keyframes noteFloat{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.45;transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){.rsvp-card .note{animation:none}}
