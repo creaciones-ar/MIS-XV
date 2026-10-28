@@ -5,7 +5,7 @@ const CONFIG = {
   whatsapp: "5491178501814", // 54 + 9 + número
   albumUrl: "https://photos.app.goo.gl/GriDHPSV9NEhcxSk6", // álbum compartido
   playlistUrl: "https://open.spotify.com/playlist/17ImBOYgtzpeEXi9pUZCVB?si=5138f4da72f34aaa&pt=59f5216a742de494a345b4397de74166", // LINK DE INVITACIÓN de la playlist colaborativa de Spotify (pegalo entre las comillas). Si queda vacío, la sección "Nuestra playlist" no aparece.
-  mensajeWa: "Hola! Confirmo mi asistencia a los XV de Priscila 💙"
+  mensajeWa: "Hola! Confirmo mi asistencia a los XV de Priscila"
 };
 
 const $ = id => document.getElementById(id);
